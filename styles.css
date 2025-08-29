@@ -29,3 +29,33 @@ body {
     width: 250px;
     height: 75px;
 }
+
+.bottom_icons {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    padding: 8px;
+    justify-content: space-evenly;
+    height: 50px;
+    display: flex;
+    border-radius: 12px;
+    transform: translateX(-50%);
+    align-items: center;
+    width: 200px;
+    gap: 25px;
+}
+
+.linkedin_redirect img {
+    width: 50px;
+    height: 50px;
+}
+
+.github_redirect img {
+    width: 40px;
+    height: 40px;
+}
+
+.contact_me img {
+    width: 40px;
+    height: 40px;
+}
