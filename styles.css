@@ -11,10 +11,20 @@ body {
 
 h1 {
   font-family: "Times New Roman", Times, serif;
-  font-stretch: ultra-condensed; 
+  font-stretch: condensed; 
   font-size: x-large;
   letter-spacing: -0.5px;
   color: #b4c7ef
+}
+
+.about_me {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: medium;
+    display: flex;
+    justify-content: center;
+    width: 33.33%;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .header_container {
@@ -67,4 +77,15 @@ h1 {
 .contact_me img {
     width: 40px;
     height: 40px;
+}
+
+.project_one {
+    display: flex;
+    color: white;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: 33.33%;
+    margin: 0 auto;
+    background-color: black;
 }
