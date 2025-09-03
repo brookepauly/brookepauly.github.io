@@ -51,7 +51,7 @@ h1 {
 .bottom_icons {
     position: fixed;
     bottom: 0;
-    margin-bottom: 40px;;
+    margin-bottom: 40px;
     left: 50%;
     padding: 8px;
     justify-content: space-evenly;
@@ -69,9 +69,17 @@ h1 {
     height: 50px;
 }
 
+.linkedin_redirect:hover {
+    transform: scale(1.05);
+}
+
 .github_redirect img {
     width: 40px;
     height: 40px;
+}
+
+.github_redirect:hover {
+    transform: scale(1.05)
 }
 
 .contact_me img {
@@ -79,13 +87,34 @@ h1 {
     height: 40px;
 }
 
-.project_one {
-    display: flex;
-    color: white;
+.contact_me:hover {
+    transform: scale(1.05)
+}
+
+.project:hover {
+    transform: scale(1.05)
+}
+
+.project {
+    display: border;
+    width: 500px;
+    min-height: 75px;
     text-align: center;
     justify-content: center;
     align-items: center;
-    width: 33.33%;
     margin: 0 auto;
+    margin-top: 25px;;
     background-color: black;
+    border-radius: 12px;
+    color: white;
+    padding-top: 1px;
+    font-family: 'Monaco', monospace;
+}
+
+.project img {
+    float: left;
+    margin-top: 8px;
+    width: 67px;
+    height: auto;
+    margin-left: 5px;
 }
