@@ -122,6 +122,18 @@ h1 {
     height: auto;
 }
 
+
 .modal {
-    
+    display: flex;
+    align-items: center;
+    background: black;
+}
+
+.modal_content {
+    overflow-y: auto;
+    border-radius: 8px;
+}
+
+.hidden {
+    display: none;    
 }
