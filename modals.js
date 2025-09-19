@@ -29,7 +29,5 @@ document.querySelectorAll('.modal').forEach(modal => {
     ) {
       modal.classList.add('hidden');
     }
-
-    if (!content.contains(e.target)) modal.classList.add('hidden');
   });
 });

@@ -1,5 +1,5 @@
 * {
-    cursor: url("blue_pixel.png") 16 16, auto;
+    cursor: url("Files/blue_pixel.png") 16 16, auto;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Audiowide&family=Syncopate:wght@400;700&family=VT323&family=Press+Start+2P&display=swap");
@@ -122,14 +122,18 @@ h1 {
     height: auto;
 }
 
+.modal, .modal * {
+  user-select: none; /* disables text selection */
+}
 
 .modal {
     position: fixed;
+    background: #92e0f8;
     top: 20px;
     right: 20px;
-    background: #92e0f8;
     border-radius: 10px;
-    max-width: 600px;
+    max-width: 300px;
+    max-height: 300px;
     overflow-y: auto;
     z-index: 1000;
 }
@@ -150,4 +154,9 @@ h1 {
 
 .hidden {
     display: none;    
+}
+
+.modal_content::-webkit-scrollbar {
+  width: 8px;
+  background: #383bf2
 }
