@@ -31,3 +31,30 @@ document.querySelectorAll('.modal').forEach(modal => {
     }
   });
 });
+
+const iframe = document.getElementById("project_one_file");
+
+// Example for 8.5x11 inch page (A4 ~ 1:1.414 aspect ratio)
+const pageWidth = 800;  // width in px
+const pageHeight = 1131; // height in px
+const aspectRatio = pageHeight / pageWidth;
+
+function resizeModal() {
+  const maxWidth = window.innerWidth * 0.9;
+  const maxHeight = window.innerHeight * 0.9;
+
+  let width = maxWidth;
+  let height = width * aspectRatio;
+
+  if (height > maxHeight) {
+    height = maxHeight;
+    width = height / aspectRatio;
+  }
+
+  document.querySelector('.modal').style.width = width + "px";
+  document.querySelector('.modal').style.height = height + "px";
+}
+
+window.addEventListener('resize', resizeModal);
+resizeModal();
+
