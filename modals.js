@@ -32,16 +32,16 @@ document.querySelectorAll('.modal').forEach(modal => {
   });
 });
 
-const iframe = document.getElementById("project_one_file");
-
-// Example for 8.5x11 inch page (A4 ~ 1:1.414 aspect ratio)
-const pageWidth = 800;  // width in px
-const pageHeight = 1131; // height in px
-const aspectRatio = pageHeight / pageWidth;
-
 function resizeModal() {
+  const modal = document.getElementById('modal_one'); // target only modal_one
+  if (!modal) return; // if modal_one doesn't exist, do nothing
+
   const maxWidth = window.innerWidth * 0.9;
   const maxHeight = window.innerHeight * 0.9;
+
+  const pageWidth = 800;
+  const pageHeight = 1131;
+  const aspectRatio = pageHeight / pageWidth;
 
   let width = maxWidth;
   let height = width * aspectRatio;
@@ -51,8 +51,8 @@ function resizeModal() {
     width = height / aspectRatio;
   }
 
-  document.querySelector('.modal').style.width = width + "px";
-  document.querySelector('.modal').style.height = height + "px";
+  modal.style.width = width + "px";
+  modal.style.height = height + "px";
 }
 
 window.addEventListener('resize', resizeModal);
