@@ -20,6 +20,7 @@ h1 {
   font-family: "Times New Roman", Times, serif;
   font-stretch: condensed; 
   font-size: x-large;
+  font-weight: bold;
   letter-spacing: -0.5px;
   color: #92e0f8
 }
@@ -288,7 +289,7 @@ h1 {
 .close_button {
     position: absolute;
     top: 0;
-    left: 0;
+    right: 0;
     font-size: 30px;
     background: none;
     border: none;
