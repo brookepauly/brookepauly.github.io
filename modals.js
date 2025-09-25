@@ -15,7 +15,7 @@ document.querySelectorAll('.modal').forEach(modal => {
     const content = modal.querySelector('.modal_content');
 
     // click on button OR within a small buffer around button
-    const buffer = 10; // pixels
+    const buffer = 10; 
     const rect = btn.getBoundingClientRect();
 
     if (
@@ -34,7 +34,7 @@ document.querySelectorAll('.modal').forEach(modal => {
 
 function resizeModal() {
   const modal = document.getElementById('modal_one'); // target only modal_one
-  if (!modal) return; // if modal_one doesn't exist, do nothing
+  if (!modal) return; 
 
   const maxWidth = window.innerWidth * 0.9;
   const maxHeight = window.innerHeight * 0.9;
