@@ -60,7 +60,7 @@ h1 {
     padding: 15px;
 }
 
-
+/* Add button style from Github repo @YounesLaaroussi */
 .btn-23,
 .btn-23 *,
 .btn-23 :after,
@@ -162,6 +162,7 @@ h1 {
 .resume_download_button:hover {
     transform: scale(1.05);
 }
+/* End of button from @YounesLaaroussi */
 
 .bottom_icons {
     margin: 0 auto;
@@ -239,7 +240,7 @@ h1 {
 .modal {
     position: fixed;
     display: flex;
-    border-radius: 15px; 
+    border-radius: 35px; 
     top: 10px;
     right: 10px;
     height: 50%;
