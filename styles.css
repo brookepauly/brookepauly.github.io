@@ -29,7 +29,6 @@ h1 {
     font-size: medium;
     display: flex;
     width: 450px;
-    justify-content: center;
     margin: 0 auto;
     text-align: center;
 }
@@ -53,6 +52,25 @@ h1 {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.resume_button_container  {
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+}
+
+.resume_download_button {
+    background-color: #92e0f8;
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    border-color: #c6e7f1
+    font-family: 
+}
+
+.resume_download_button:hover {
+    transform: scale(1.05);
 }
 
 .bottom_icons {
@@ -187,3 +205,4 @@ h1 {
 }
 
 .hidden { display: none !important; }
+
