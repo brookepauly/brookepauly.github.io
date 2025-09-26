@@ -25,13 +25,14 @@ h1 {
   font-weight: bold;
   letter-spacing: -0.5px;
   color: black;
+  margin-top: 20px;
 }
 
 .about_me {
     font-family: 'Share Tech Mono', monospace;
     font-size: medium;
     display: flex;
-    width: 450px;
+    width: 500px;
     margin: 0 auto;
     text-align: center;
 }
@@ -39,7 +40,7 @@ h1 {
 .header_container {
     display: flex;
     flex-direction: column; 
-    margin-top: 20px;
+    margin-top: 40px;
     align-items: center;
 }
 
@@ -47,16 +48,43 @@ h1 {
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    overflow: hidden;
     object-fit: cover;
     margin-top: 5px;
     margin-bottom: 10px;
+    position: relative;
+    z-index: 1;
 }
 
 .pfp img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 50%;
+}
+
+.pfp::before, .pfp::after {
+  position: absolute;
+  content: '';
+  height: 205px;
+  width: 205px;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  background-image: conic-gradient(#92e0f8, rgb(71, 209, 252), white, #92e0f8);
+  z-index: -1;
+  translate: -50% -50%;
+  animation: rotate 3s linear infinite;
+}
+
+.circle:hover::before,
+.circle:hover::after {
+  animation-play-state: paused;
+}
+
+@keyframes rotate {
+  to {
+    rotate: 360deg;
+  }
 }
 
 .resume_button_container  {
@@ -248,7 +276,7 @@ h1 {
     position: fixed;
     display: flex;
     border-radius: 35px; 
-    top: 10px;
+    bottom: 10px;
     right: 10px;
     height: 50%;
     width: 50%;
