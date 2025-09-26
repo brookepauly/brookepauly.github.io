@@ -346,6 +346,7 @@ h1 {
     align-items: center;
     background-color: black;
     margin: 0;
+    width: auto;
   }
 
   .pfp {
@@ -373,26 +374,25 @@ h1 {
     display: flex;
     margin-left: 100px;
     flex-direction: column;
-    align-items: left;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
     color: white;
   }
 
   .intro_wrapping h1 {
+    font-size: 4rem;
     text-align: left;
     color: white;
+    margin-bottom: 10px;
   }
 
   .about_me p {
+    margin-top: 0px;
     text-align: left;
+    font-size: 1rem;
   }
 
   .resume_button_container{
     margin-top: 50px;
-  }
-
-  .footer {
-    margin-top: 2rem;
-    margin-left: calc()
   }
 }
