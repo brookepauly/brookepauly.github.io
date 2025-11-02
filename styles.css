@@ -1,7 +1,8 @@
 
 html, body{
-    height: 100%;
+    height: auto;
     margin: 0;
+    padding-bottom: 0px;
 }
 
 header {
@@ -18,6 +19,7 @@ body {
   flex-direction: column;
   flex: 1;
 }
+
 
 h1 {
   font-family: "Times New Roman", Times, serif;
@@ -209,6 +211,7 @@ h1 {
 .bottom_icons {
     margin: 0 auto;
     margin-top: 50px;
+    padding-bottom: 50px;
     justify-content: space-evenly;
     height: 50px;
     display: flex;
@@ -341,6 +344,7 @@ h1 {
 
 .hidden { display: none !important; }
 
+/* when the screen is wider changes */
 @media (min-width: 1024px) {
 
   .bottom_icons {
@@ -523,4 +527,13 @@ h1 {
   .linkedin_white:hover {
     transform: scale(1.10);
   }
+
+  .project_three {
+    padding-bottom: 150px;
+  }
+
+  body {
+    padding-bottom: 150px;
+  }
+  
 }
