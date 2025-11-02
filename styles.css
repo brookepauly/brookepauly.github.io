@@ -346,6 +346,9 @@ h1 {
 
 /* when the screen is wider changes */
 @media (min-width: 1024px) {
+  html {
+    scroll-behavior: smooth;
+  }
 
   .bottom_icons {
     display: none;
