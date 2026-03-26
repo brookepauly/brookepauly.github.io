@@ -280,58 +280,6 @@ h1 {
     height: auto;
 }
 
-.modal, .modal * {
-  user-select: none; /* disables text selection */
-}
-
-.modal {
-    position: fixed;
-    display: flex;
-    border-radius: 35px; 
-    bottom: 10px;
-    right: 10px;
-    height: 50%;
-    width: 50%;
-}
-
-.modal_content {
-    flex: 1;
-}
-
-.modal_content iframe {
-    width: 100%;
-    border-radius: 15px; 
-    height: 100%;
-}
-
-#modal_one {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* center modal */
-    max-width: 90%;   /* never wider than 90% of screen */
-    max-height: 90%;  /* never taller than 90% of screen */
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    z-index: 1000;
-}
-
-#modal_one .modal_content {
-    flex: 1;
-    overflow: hidden;
-}
-
-#modal_one .modal_content iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-    border-radius: 15px; 
-}
-
 .close_button {
     position: absolute;
     top: 0;
