@@ -124,26 +124,6 @@ h1 {
   background-color: #1b1b1b;
 }
 
-  .projects-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  padding: 2rem;
-  max-width: 600px;      /* caps width on large screens */
-  margin: 0 auto;        /* centers it */
-  width: 100%;           /* shrinks on small screens */
-  box-sizing: border-box;
-}
-
-.Project_One, .Project_Two, .Project_Three {
-  background: #fff;
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  padding: 1.25rem;
-}
-
-
-
 @keyframes carousel-animation {
   0% {
     transform: translateX(0);

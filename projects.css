@@ -1,0 +1,28 @@
+
+body {
+  background-color: black;
+}
+
+.projects-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem;
+  width: 100%;   
+  box-sizing: border-box;
+  max-width: 900px;    
+  margin: 0;           
+}
+
+.Project_One, .Project_Two, .Project_Three {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1.25rem;
+}
+
+.project {
+  width: 100%;         
+  min-height: 150px;   
+  box-sizing: border-box;
+}
