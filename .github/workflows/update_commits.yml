@@ -16,8 +16,7 @@ jobs:
           curl -X POST \
           -H "Authorization: bearer ${{ secrets.PERSONAL_TOKEN }}" \
           -H "Content-Type: application/json" \
-          -d '{"query": "{ user(login: \"brookepauly\") { contributionsCollection { commitContributionsByRepository { contributions(first: 100) { nodes { occurredAt } } repository { name isPrivate } } } } }"}' \
-          https://api.github.com/graphql \
+          -d '{"query": "{ user(login: \"brookepauly\") { contributionsCollection { commitContributionsByRepository(maxRepositories: 50) { contributions(first: 100) { nodes { occurredAt } } repository { name isPrivate } } } } }"}' \
           > commits.json
 
       - name: Commit and push

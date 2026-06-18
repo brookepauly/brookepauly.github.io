@@ -25,12 +25,18 @@
 
     <script>
       fetch('commits.json')
-        .then(res => res.json())
-        .then(events => {
-          const commits = events.filter(e => e.type === 'PushEvent');
-          document.getElementById('commit_count').innerHTML = 
-            `<p style="color: white;">${commits.length} commits in the last 90 days</p>`;
+      .then(res => res.json())
+      .then(data => {
+        const repos = data.data.user.contributionsCollection.commitContributionsByRepository;
+        
+        let totalCommits = 0;
+        repos.forEach(repo => {
+          totalCommits += repo.contributions.nodes.length;
         });
+
+        document.getElementById('commit_count').innerHTML = 
+          `<p style="color: white;">${totalCommits} commits in the past year</p>`;
+      });
     </script>
 
   </body>
