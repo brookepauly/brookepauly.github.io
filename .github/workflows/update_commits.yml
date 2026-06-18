@@ -1,0 +1,26 @@
+name: Update Commits
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Fetch commits
+        run: |
+          curl -H "Authorization: token ${{ secrets.PERSONAL_TOKEN }}" \
+          https://api.github.com/users/brookepauly/events \
+          > commits.json
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add commits.json
+          git commit -m "update commits" || echo "no changes"
+          git push

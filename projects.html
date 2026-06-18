@@ -1,23 +1,37 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="projects.css">
   </head>
   <body>
-    <div class="slider">
-      <div class="slides">
-        <div id="slide-1">
-          Project one content
-        </div>
-        <div id="slide-2">
-          Project two content
-        </div>
-        <div id="slide-3">
-          Project three content
+    <div class="page_container">
+
+      <div class="left_side">
+        <div id="commit_history">
+          <div id="commit_count"></div>
         </div>
       </div>
+
+      <div class="slider">
+        <div class="slides">
+          <div id="slide-1">Project one content</div>
+          <div id="slide-2">Project two content</div>
+          <div id="slide-3">Project three content</div>
+        </div>
+      </div>
+
     </div>
+
+    <script>
+      fetch('commits.json')
+        .then(res => res.json())
+        .then(events => {
+          const commits = events.filter(e => e.type === 'PushEvent');
+          document.getElementById('commit_count').innerHTML = 
+            `<p style="color: white;">${commits.length} commits in the last 90 days</p>`;
+        });
+    </script>
+
   </body>
 </html>
