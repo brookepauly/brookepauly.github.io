@@ -13,9 +13,11 @@ jobs:
 
       - name: Fetch commits
         run: |
-          curl -H "Authorization: token ${{ secrets.PERSONAL_TOKEN }}" \
-          -H "Accept: application/vnd.github+json" \
-          https://api.github.com/users/brookepauly/events?per_page=100 \
+          curl -X POST \
+          -H "Authorization: bearer ${{ secrets.PERSONAL_TOKEN }}" \
+          -H "Content-Type: application/json" \
+          -d '{"query": "{ user(login: \"brookepauly\") { contributionsCollection { commitContributionsByRepository { contributions(first: 100) { nodes { occurredAt } } repository { name isPrivate } } } } }"}' \
+          https://api.github.com/graphql \
           > commits.json
 
       - name: Commit and push
