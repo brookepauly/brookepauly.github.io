@@ -11,6 +11,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Test token
+        run: |
+          curl -H "Authorization: token ${{ secrets.PERSONAL_TOKEN }}" \
+          https://api.github.com/user
+
       - name: Fetch commits
         run: |
           response=$(curl -H "Authorization: token ${{ secrets.PERSONAL_TOKEN }}" \
