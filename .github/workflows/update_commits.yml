@@ -1,0 +1,29 @@
+name: Update Commits
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch commits
+        run: |
+          curl -X POST \
+          -H "Authorization: bearer ${{ secrets.PERSONAL_TOKEN }}" \
+          -H "Content-Type: application/json" \
+          -d '{"query": "{ viewer { contributionsCollection(from: \"2025-06-01T00:00:00Z\") { contributionCalendar { totalContributions weeks { contributionDays { contributionCount date } } } } } }"}' \
+          https://api.github.com/graphql \
+          > commits.json
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add commits.json
+          git commit -m "update commits" || echo "no changes"
+          git push
