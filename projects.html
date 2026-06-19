@@ -8,10 +8,6 @@
     <div class="page_container">
 
       <div class="left_side">
-        <div id="commit_history">
-          <div id="commit_count"></div>
-          <table id="contribution-table"></table>
-        </div>
       </div>
 
       <div class="slider">
@@ -23,27 +19,5 @@
       </div>
 
     </div>
-
-    <script>
-      fetch('commits.json')
-      .then(res => res.json())
-      .then(data => {
-        const weeks = data.data.viewer.contributionsCollection.contributionCalendar.weeks;
-        const contributionTable = document.getElementById('contribution-table');
-
-        for (let weekIndex = 0; weekIndex < weeks.length; weekIndex++) {
-          const row = document.createElement('tr');
-          for (let dayOfWeek = 0; dayOfWeek < 7; dayOfWeek++) {
-            const contributionDay = weeks[weekIndex].contributionDays[dayOfWeek];
-            const count = contributionDay ? contributionDay.contributionCount : 0;
-            const td = document.createElement('td');
-            td.className = `color-${count < 5 ? 0 : count < 10 ? 1 : count < 15 ? 2 : count < 20 ? 3 : 4}`;
-            row.appendChild(td);
-          }
-          contributionTable.appendChild(row);
-        }
-      });
-    </script>
-
   </body>
 </html>
