@@ -8,6 +8,8 @@
     <div class="page_container">
 
       <div class="left_side">
+        <p style="color: white; font-size: 13px; margin-bottom: 8px;">246 contributions in the last year</p>
+        <table id="contribution-table"></table>
       </div>
 
       <div class="slider">
@@ -22,24 +24,24 @@
 
     <script>
       fetch('commits.json')
-      .then(res => res.json())
-      .then(data => {
-        const contributions = data.data.viewer.contributionsCollection.contributionCalendar;
-        const weeks = contributions.weeks;
-        const contributionTable = document.getElementById('contribution-table');
+        .then(res => res.json())
+        .then(data => {
+          const weeks = data.data.viewer.contributionsCollection.contributionCalendar.weeks;
+          const table = document.getElementById('contribution-table');
 
-        for (let dayOfWeek = 0; dayOfWeek < 7; dayOfWeek++) {
-          const row = document.createElement('tr');
-          for (let weekIndex = 0; weekIndex < weeks.length; weekIndex++) {
-            const contributionDay = weeks[weekIndex].contributionDays[dayOfWeek];
-            const count = contributionDay ? contributionDay.contributionCount : 0;
-            const td = document.createElement('td');
-            td.className = `color-${count < 5 ? 0 : count < 10 ? 1 : count < 15 ? 2 : count < 20 ? 3 : 4}`;
-            row.appendChild(td);
-          }
-          contributionTable.appendChild(row);
-        }
-      });
+          weeks.forEach(week => {
+            week.contributionDays.forEach(day => {
+              const tr = document.createElement('tr');
+              const td = document.createElement('td');
+              const count = day.contributionCount;
+              td.title = `${day.date}: ${count} contributions`;
+              td.className = `color-${count === 0 ? 0 : count < 5 ? 1 : count < 10 ? 2 : count < 15 ? 3 : 4}`;
+              tr.appendChild(td);
+              table.appendChild(tr);
+            });
+          });
+        });
     </script>
+
   </body>
 </html>
