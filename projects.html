@@ -24,30 +24,29 @@
 
     <script>
       document.addEventListener('DOMContentLoaded', () => {
-        fetch('commits.json')
-          .then(res => res.json())
-          .then(data => {
-            const contributions = data.data.viewer.contributionsCollection.contributionCalendar;
-            const weeks = contributions.weeks;
-            const contributionTable = document.getElementById('contribution-table');
+      fetch('commits.json')
+        .then(res => res.json())
+        .then(data => {
+          const contributions = data.data.viewer.contributionsCollection.contributionCalendar;
+          const weeks = contributions.weeks;
+          const contributionTable = document.getElementById('contribution-table');
 
-            document.getElementById('commit_count').innerHTML = 
-              `<p style="color: white;">${contributions.totalContributions} commits in the past year</p>`;
+          document.getElementById('commit_count').innerHTML = 
+            `<p style="color: white;">${contributions.totalContributions} commits in the past year</p>`;
 
-            for (let dayOfWeek = 0; dayOfWeek < 7; dayOfWeek++) {
-              const row = document.createElement('tr');
-              for (let weekIndex = 0; weekIndex < weeks.length; weekIndex++) {
-                const contributionDay = weeks[weekIndex].contributionDays[dayOfWeek];
-                const count = contributionDay ? contributionDay.contributionCount : 0;
-                const td = document.createElement('td');
-                td.className = `color-${count === 0 ? 0 : count < 5 ? 1 : count < 10 ? 2 : count < 15 ? 3 : 4}`;
-                row.appendChild(td);
-              }
-              contributionTable.appendChild(row);
-            }
-          })
-          .catch(err => console.error('Error:', err));
-      });
+          weeks.forEach(week => {
+            const row = document.createElement('tr');
+            week.contributionDays.forEach(day => {
+              const td = document.createElement('td');
+              const count = day.contributionCount;
+              td.className = `color-${count === 0 ? 0 : count < 5 ? 1 : count < 10 ? 2 : count < 15 ? 3 : 4}`;
+              row.appendChild(td);
+            });
+            contributionTable.appendChild(row);
+          });
+        })
+        .catch(err => console.error('Error:', err));
+    });
     </script>
 
   </body>
