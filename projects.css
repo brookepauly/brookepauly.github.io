@@ -81,26 +81,27 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;    
+  min-width: 0; 
 }
 
 #contribution-table td {
-  width: 10px;
-  height: 13px;
-  border-radius: 6px;
+  width: clamp(4px, 1vw, 10px);    
+  height: clamp(4px, 1vw, 10px);
+  border-radius: 3px;
 }
 
 #contribution-table td:hover {
-  filter: brightness(1.5);
+  filter: brightness(2.5);
   transition: filter 0.2s ease;
 }
 
-
 #contribution-table {
   border-collapse: separate;
-  border-spacing: 2px;
   width: 80%; 
   height: 90%;
   animation: slideUp 2s ease;    
+  border-spacing: clamp(1px, 0.3vw, 3px);
 }
 
 #commit_count {
@@ -108,6 +109,14 @@ body {
   margin-bottom: 1rem;
   animation: slideUp 2s ease;
 }
+
+#commit_count p {
+  font-size: clamp(10px, 1.5vw, 16px);  
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 
 @keyframes slideUp {
   from { opacity: 0; transform: translateY(20px); }
