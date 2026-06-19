@@ -1,1 +1,0 @@
-{"errors":[{"path":["query","viewer","contributionsCollection","includePrivateContributions"],"extensions":{"code":"argumentNotAccepted","name":"contributionsCollection","typeName":"Field","argumentName":"includePrivateContributions"},"locations":[{"line":1,"column":66}],"message":"Field 'contributionsCollection' doesn't accept argument 'includePrivateContributions'"}]}
