@@ -10,6 +10,7 @@
       <div class="left_side">
         <div id="commit_history">
           <div id="commit_count"></div>
+          <table id="contribution-table"></table>
         </div>
       </div>
 
@@ -27,15 +28,21 @@
       fetch('commits.json')
       .then(res => res.json())
       .then(data => {
-        const repos = data.data.user.contributionsCollection.commitContributionsByRepository;
-        
-        let totalCommits = 0;
-        repos.forEach(repo => {
-          totalCommits += repo.contributions.nodes.length;
-        });
+        const contributions = data.data.viewer.contributionsCollection.contributionCalendar;
+        const weeks = contributions.weeks;
+        const contributionTable = document.getElementById('contribution-table');
 
-        document.getElementById('commit_count').innerHTML = 
-          `<p style="color: white;">${totalCommits} commits in the past year</p>`;
+        for (let dayOfWeek = 0; dayOfWeek < 7; dayOfWeek++) {
+          const row = document.createElement('tr');
+          for (let weekIndex = 0; weekIndex < weeks.length; weekIndex++) {
+            const contributionDay = weeks[weekIndex].contributionDays[dayOfWeek];
+            const count = contributionDay ? contributionDay.contributionCount : 0;
+            const td = document.createElement('td');
+            td.className = `color-${count < 5 ? 0 : count < 10 ? 1 : count < 15 ? 2 : count < 20 ? 3 : 4}`;
+            row.appendChild(td);
+          }
+          contributionTable.appendChild(row);
+        }
       });
     </script>
 
