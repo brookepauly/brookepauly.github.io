@@ -78,7 +78,6 @@ body {
   color: white;
   flex: 1;
   padding: 1rem;
-  margin-top: -80px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -86,21 +85,35 @@ body {
 
 #contribution-table td {
   width: 10px;
-  height: 10px;
-  border-radius: 2px;
+  height: 13px;
+  border-radius: 6px;
 }
+
+#contribution-table td:hover {
+  filter: brightness(1.5);
+  transition: filter 0.2s ease;
+}
+
 
 #contribution-table {
   border-collapse: separate;
   border-spacing: 2px;
   width: 80%; 
-  height: 100%;       
+  height: 90%;
+  animation: slideUp 2s ease;    
 }
 
 #commit_count {
   text-align: center;
   margin-bottom: 1rem;
+  animation: slideUp 2s ease;
 }
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 
 .color-0 { background-color: #161b22; }
 .color-1 { background-color: #0e4429; }
