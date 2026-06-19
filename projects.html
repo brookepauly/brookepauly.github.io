@@ -28,13 +28,12 @@
       fetch('commits.json')
       .then(res => res.json())
       .then(data => {
-        const contributions = data.data.viewer.contributionsCollection.contributionCalendar;
-        const weeks = contributions.weeks;
+        const weeks = data.data.viewer.contributionsCollection.contributionCalendar.weeks;
         const contributionTable = document.getElementById('contribution-table');
 
-        for (let dayOfWeek = 0; dayOfWeek < 7; dayOfWeek++) {
+        for (let weekIndex = 0; weekIndex < weeks.length; weekIndex++) {
           const row = document.createElement('tr');
-          for (let weekIndex = 0; weekIndex < weeks.length; weekIndex++) {
+          for (let dayOfWeek = 0; dayOfWeek < 7; dayOfWeek++) {
             const contributionDay = weeks[weekIndex].contributionDays[dayOfWeek];
             const count = contributionDay ? contributionDay.contributionCount : 0;
             const td = document.createElement('td');

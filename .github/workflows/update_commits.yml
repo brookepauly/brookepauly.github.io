@@ -16,7 +16,7 @@ jobs:
           curl -X POST \
           -H "Authorization: bearer ${{ secrets.PERSONAL_TOKEN }}" \
           -H "Content-Type: application/json" \
-          -d '{"query": "{ viewer { contributionsCollection(from: \"2025-06-01T00:00:00Z\") { contributionCalendar { totalContributions weeks { contributionDays { contributionCount date } } } } } }"}' \
+          -d '{"query": "{ viewer { contributionsCollection(from: \"2025-06-01T00:00:00Z\", includePrivateContributions: true) { contributionCalendar { totalContributions weeks { contributionDays { contributionCount date } } } } } }"}' \
           https://api.github.com/graphql \
           > commits.json
 
