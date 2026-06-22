@@ -111,8 +111,7 @@ body {
 }
 
 #commit_count p {
-  font-size: clamp(10px, 1.5vw, 16px);  
-  white-space: nowrap;
+  font-size: clamp(0.8rem, 0.5rem, 0.5rem);  
   overflow: hidden;
   text-overflow: ellipsis;
 }
