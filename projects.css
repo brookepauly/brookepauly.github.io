@@ -128,3 +128,18 @@ body {
 .color-2 { background-color: #0077ff; }
 .color-3 { background-color: #0011ff; }
 .color-4 { background-color: #001a79; }
+
+/* Slide Styling */
+
+#slide-2 {
+  display: flex;
+  align-items: flex-end;       /* pushes to bottom */
+  justify-content: flex-start; /* pushes to left */
+  padding: 1rem;
+}
+
+#slide-2 iframe {
+  width: 40%;       
+  height: 40%;
+  border-radius: 10px;
+}
