@@ -135,22 +135,44 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: flex-start;
   padding: 1.5rem;
   position: relative;
 }
 
 .slide-text {
-  align-self: flex-start; 
+  align-self: center; 
+  width: 80%;
 }
 
-#slide-2 iframe {
-  position: absolute;
-  bottom: 1rem;
-  right: 1rem;
-  width: 50%;
-  height: 50%;
+.project-two-visuals {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 1rem;
+}
+
+.bottom-visuals {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 1rem;
+  flex: 1;
+}
+
+.bottom-visuals img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   border-radius: 10px;
+}
+
+.bottom-visuals iframe {
+  width: 90%;
+  height: 60%;
+  border-radius: 10px;
+  border: none;
 }
 
 /* Stylish "Bubble" Button */
