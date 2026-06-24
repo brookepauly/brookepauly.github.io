@@ -133,13 +133,22 @@ body {
 
 #slide-2 {
   display: flex;
-  align-items: flex-end;       /* pushes to bottom */
-  justify-content: flex-start; /* pushes to left */
-  padding: 1rem;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1.5rem;
+  position: relative;
+}
+
+.slide-text {
+  align-self: flex-start;  /* text stays top left */
 }
 
 #slide-2 iframe {
-  width: 40%;       
-  height: 40%;
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  width: 50%;
+  height: 50%;
   border-radius: 10px;
 }
