@@ -167,7 +167,10 @@ body {
   flex: 1;
   display: flex;
   flex-direction: row;
-  width: 100%;
+  margin-top: 1rem;
+  width: 90%;
+  height:90%;
+  border-radius: 3rem;
 }
 
 .bottom-visuals {
@@ -181,7 +184,6 @@ body {
 .bottom-visuals iframe {
   width: 100%;
   height: 100%;
-  border-radius: 5rem;
 }
 
 /* Stylish "Bubble" Button */
