@@ -1,0 +1,11 @@
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  
+  // Grab everything you want animated, regardless of animation type
+  document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
