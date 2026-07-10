@@ -14,7 +14,7 @@
         <img class = "brooke_logo" src = "./Files/unclogo.png" alt = "logo">
         <nav>
             <ul class = "nav_links">
-                <li> <a href = "#"> Projects </a> </li>
+                <li> <a href = "#projects"> Projects </a> </li>
                 <li> <a href = "#"> Selected Works </a> </li>
                 <li> <a href = "#" > About Me </a> </li>
                 <li> <a href = "https://drive.google.com/file/d/15yLa9zOJjDJ7TS9q4iY6GbH2DEjjP1Ko/view?usp=sharing"> View Resume </a> </li>
@@ -58,55 +58,57 @@
         </div>
     </div>
     
-    <h1 class="projects_heading"> Projects </h1>
-    <h2 class = "projects_heading_two"> What I've Built </h2>
+    <section id = "projects">
+        <h1 class="projects_heading scroll-animate"> Projects </h1>
+        <h2 class = "projects_heading_two"> What I've Built </h2>
 
-    <div class="carousel_page">
-        <input type="radio" name="position" id="pos-1" />
-        <input type="radio" name="position" id="pos-2" checked />
-        <input type="radio" name="position" id="pos-3" />
+        <div class="carousel_page">
+            <input type="radio" name="position" id="pos-1" />
+            <input type="radio" name="position" id="pos-2" checked />
+            <input type="radio" name="position" id="pos-3" />
 
-        <main id="carousel">
-            <div class="item" id="slide-1">
-                <h2>Linear Regression Project</h2>
-                <p>Description of the project and what you built.</p>
-            </div>
+            <main id="carousel" class = "scroll-animate">
+                <div class="item" id="slide-1">
+                    <h2>Linear Regression Project</h2>
+                    <p>Description of the project and what you built.</p>
+                </div>
 
-            <div class="item" id="slide-2">
-                <div class="project-text">
-                    <div class="text-content">
-                        <h2>Polarization Research</h2>
-                        <p>Description of the project and what you built. Description of the project and what you built. Description of the project and what you built. Description of the project and what you built.Description of the project and what you built.Description of the project and what you built.Description of the project and what you built.</p>
-                        <div class="skill-tags">
-                            <span class="skill-tag"> ggplot2 </span>
-                            <span class="skill-tag"> TidyVerse </span>
-                            <span class="skill-tag"> R Studio </span>
+                <div class="item" id="slide-2">
+                    <div class="project-text">
+                        <div class="text-content">
+                            <h2>Polarization Research</h2>
+                            <p>Description of the project and what you built. Description of the project and what you built. Description of the project and what you built. Description of the project and what you built.Description of the project and what you built.Description of the project and what you built.Description of the project and what you built.</p>
+                            <div class="skill-tags">
+                                <span class="skill-tag"> ggplot2 </span>
+                                <span class="skill-tag"> TidyVerse </span>
+                                <span class="skill-tag"> R Studio </span>
+                            </div>
+                        </div>
+                        <div class="research-buttons">
+                            <a href="https://app.swapcard.com/event/ppe-society-ninth-am/planning/UGxhbm5pbmdfMjczMjk0NQ==" target="_blank">
+                                <button class="project_button"><span>Conference Information</span></button>
+                            </a>
+                            <a href="https://github.com/brookepauly" target="_blank" aria-label="GitHub" id = "github-research">
+                                <img src="./Files/github_white_logo_edited.png" alt="GitHub">
+                            </a>
                         </div>
                     </div>
-                    <div class="research-buttons">
-                        <a href="https://app.swapcard.com/event/ppe-society-ninth-am/planning/UGxhbm5pbmdfMjczMjk0NQ==" target="_blank">
-                            <button class="project_button"><span>Conference Information</span></button>
-                        </a>
-                        <a href="https://github.com/brookepauly" target="_blank" aria-label="GitHub" id = "github-research">
-                            <img src="./Files/github_white_logo_edited.png" alt="GitHub">
-                        </a>
+                    <div class="bottom-visuals">
+                        <div class="project-two-visuals">
+                            <iframe src="Files\Polarization_Research.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
+                                width="100%" height="100%" allowfullscreen="true" frameborder="0"></iframe>
+                        </div>
                     </div>
                 </div>
-                <div class="bottom-visuals">
-                    <div class="project-two-visuals">
-                        <iframe src="Files\Polarization_Research.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
-                            width="100%" height="100%" allowfullscreen="true" frameborder="0"></iframe>
-                    </div>
-                </div>
-            </div>
 
-            <div class="item" id="slide-3">
-                <div class="project-two-visuals">
-                    <img src="Files\gravity_game.gif" alt="game demo gif">
+                <div class="item" id="slide-3">
+                    <div class="project-two-visuals">
+                        <img src="Files\gravity_game.gif" alt="game demo gif">
+                    </div>
                 </div>
-            </div>
-        </main>
-    </div>
+            </main>
+        </div>
+    </section>
     <aside class="social-links">
         <ul class="links-list">
             <li class="social-link">
@@ -127,3 +129,7 @@
                 </a>
             </li>
         </ul>
+    </aside>
+    <script src="scroll.js"></script>
+</body>
+</html>
