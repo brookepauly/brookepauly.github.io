@@ -26,6 +26,93 @@ color: black;
 margin-top: 20px;
 }
 
+/* Typewriter effect in Profile Section */
+
+@keyframes typing {
+  0.0000%, 27.5862%, 31.0345%, 56.3218%, 59.7701%, 96.5517%, 100.0000% { content: ""; }
+  1.1494%, 26.4368% { content: "R"; }
+  2.2989%, 25.2874% { content: "Re"; }
+  3.4483%, 24.1379% { content: "Res"; }
+  4.5977%, 22.9885% { content: "Rese"; }
+  5.7471%, 21.8391% { content: "Resea"; }
+  6.8966%, 20.6897% { content: "Resear"; }
+  8.0460%, 19.5402% { content: "Researc"; }
+  9.1954%, 18.3908% { content: "Research"; }
+  10.3448%, 17.2414% { content: "Researche"; }
+  11.4943%, 16.0920% { content: "Researcher"; }
+
+  32.1839%, 55.1724%, 60.9195%, 95.4023% { content: "D"; }
+  33.3333%, 54.0230% { content: "De"; }
+  34.4828%, 52.8736% { content: "Dev"; }
+  35.6322%, 51.7241% { content: "Deve"; }
+  36.7816%, 50.5747% { content: "Devel"; }
+  37.9310%, 49.4253% { content: "Develo"; }
+  39.0805%, 48.2759% { content: "Develop"; }
+  40.2299%, 47.1264% { content: "Develope"; }
+  41.3793%, 45.9770% { content: "Developer"; }
+
+  62.0690%, 94.2529% { content: "Da"; }
+  63.2184%, 93.1034% { content: "Dat"; }
+  64.3678%, 91.9540% { content: "Data"; }
+  65.5172%, 90.8046% { content: "Data "; }
+  66.6667%, 89.6552% { content: "Data S"; }
+  67.8161%, 88.5057% { content: "Data Sc"; }
+  68.9655%, 87.3563% { content: "Data Sci"; }
+  70.1149%, 86.2069% { content: "Data Scie"; }
+  71.2644%, 85.0575% { content: "Data Scien"; }
+  72.4138%, 83.9080% { content: "Data Scient"; }
+  73.5632%, 82.7586% { content: "Data Scienti"; }
+  74.7126%, 81.6092% { content: "Data Scientis"; }
+  75.8621%, 80.4598% { content: "Data Scientist"; }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.typewriter {
+  --caret: currentcolor;
+}
+
+.typewriter::before {
+  content: "";
+  animation: typing 13.5s infinite;
+}
+
+.typewriter::after {
+  content: "";
+  border-right: 1px solid var(--caret);
+  animation: blink 0.5s linear infinite;
+}
+
+.typewriter.thick::after {
+  border-right: 1ch solid var(--caret);
+}
+
+.typewriter.nocaret::after {
+  border-right: 0;
+}
+
+@media (prefers-reduced-motion) {
+  .typewriter::after {
+    animation: none;
+  }
+  
+  @keyframes sequencePopup {
+    0%, 100% { content: "Researcher"; }
+    25% { content: "Developer"; }
+    50% { content: "Data Scientist"; }
+  }
+
+  .typewriter::before {
+    content: "Researcher";
+    animation: sequencePopup 12s linear infinite;
+  }
+}
+
+/* End of Typewriter effect in Profile Section */
+
 .about_me {
   font-family: 'Share Tech Mono', monospace;
   font-size: medium;
