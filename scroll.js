@@ -1,3 +1,4 @@
+/* Scroll Animation */
 const scrollObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -15,3 +16,32 @@ function revealSocialLinks() {
 }
 
 window.addEventListener('scroll', revealSocialLinks);
+
+/* Rendering Commits from GitHub API */
+
+document.addEventListener('DOMContentLoaded', () => {
+  fetch('commits.json')
+    .then(res => res.json())
+    .then(data => {
+      const contributions = data.data.viewer.contributionsCollection.contributionCalendar;
+      const weeks = contributions.weeks;
+      const contributionTable = document.getElementById('contribution-table');
+
+      document.getElementById('commit_count').innerHTML =
+        `<p style="color: white;">${contributions.totalContributions} Github commits in the past year</p>`;
+
+      const rows = Array.from({ length: 7 }, () => document.createElement('tr'));
+
+      weeks.forEach(week => {
+        week.contributionDays.forEach((day, dayIndex) => {
+          const td = document.createElement('td');
+          const count = day.contributionCount;
+          td.className = `color-${count === 0 ? 0 : count < 5 ? 1 : count < 10 ? 2 : count < 15 ? 3 : 4}`;
+          rows[dayIndex].appendChild(td);
+        });
+      });
+
+      rows.forEach(row => contributionTable.appendChild(row));
+    })
+    .catch(err => console.error('Error:', err));
+});
