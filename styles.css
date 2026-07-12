@@ -881,9 +881,14 @@ main#carousel {
 }
 
 #contribution-table {
+  opacity: 0;
   border-collapse: separate;
   animation: slideUp 2s ease;
   border-spacing: clamp(1px, 0.3vw, 3px);
+}
+
+#contribution-table.in-view {
+  animation: slideUp 2s ease forwards;
 }
 
 #contribution-table td {
@@ -907,6 +912,8 @@ main#carousel {
   font-size: clamp(0.5rem, 1vw, 0.8rem);
   overflow: hidden;
   text-overflow: ellipsis;
+  text-align:left;
+  margin-left: 8rem;
 }
 
 @keyframes slideUp {
@@ -919,3 +926,57 @@ main#carousel {
 .color-2 { background-color: #0077ff; }
 .color-3 { background-color: #0011ff; }
 .color-4 { background-color: #001a79; }
+
+/* Infinite Skill Slider */
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+#tech_stack {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+#tech_stack::before,
+#tech_stack::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 150px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+#tech_stack::before {
+  left: 0;
+  background: linear-gradient(to right, #000 0%, transparent 100%);
+}
+
+#tech_stack::after {
+  right: 0;
+  background: linear-gradient(to left, #000 0%, transparent 100%);
+}
+
+.skill-slides {
+  display: flex;
+  width: fit-content;
+  animation: scroll 45s linear infinite;
+}
+
+.skill-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  flex-shrink: 0;
+}
+
+.skill-slide img {
+  max-width: 70%;
+  max-height: 70%;
+  object-fit: contain;
+}
