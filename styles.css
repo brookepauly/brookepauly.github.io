@@ -913,7 +913,7 @@ main#carousel {
   overflow: hidden;
   text-overflow: ellipsis;
   text-align:left;
-  margin-left: 8rem;
+  margin-left: 6rem;
 }
 
 @keyframes slideUp {
@@ -979,4 +979,13 @@ main#carousel {
   max-width: 70%;
   max-height: 70%;
   object-fit: contain;
+}
+
+.proficiencies {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: column;
+  margin-right: 6rem;
+  margin-left: 6rem;
 }
