@@ -893,3 +893,45 @@ main#carousel {
 #tech_stack.in-view {
   opacity: 1;
 }
+
+/* Contact Section */
+
+#contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  color: white;
+  text-align: center;
+  gap: 1.5rem;
+  opacity: 0;
+}
+
+#contact h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+#contact input,
+#contact textarea {
+  width: 100%;
+  max-width: 400px;
+  padding: 0.75rem;
+  border: 1px solid #92e0f8;
+  border-radius: 5px;
+  background: #12151b;
+  color: white;
+  font-size: 1rem;
+  height: 40px;
+}
+
+#contact textarea {
+  height: 100px;
+  resize: none;
+}
+
+#contact.in-view {
+  animation: slideUp 1s ease forwards;
+}
