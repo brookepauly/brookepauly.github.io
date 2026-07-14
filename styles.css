@@ -13,6 +13,7 @@ html, body {
   padding-bottom: 0px;
   gap: var(--section-gap);
   background: #000;
+  font-family: "Anonymous Pro", mono
 }
 
 html {
@@ -413,7 +414,7 @@ header button:hover {
   padding-bottom: 3rem;
   display: grid;
   grid-template-rows: 560px 60px;
-  grid-template-columns: 1fr 30px 30px 30px 1fr;
+  grid-template-columns: 1fr 30px 30px 30px 30px 30px 1fr;
   justify-items: center;
   align-items: center;
 }
@@ -436,6 +437,8 @@ header button:hover {
 .carousel_page input:nth-of-type(1) { grid-column: 2; }
 .carousel_page input:nth-of-type(2) { grid-column: 3; }
 .carousel_page input:nth-of-type(3) { grid-column: 4; }
+.carousel_page input:nth-of-type(4) { grid-column: 5; }
+.carousel_page input:nth-of-type(5) { grid-column: 6; }
 
 .carousel_page input:checked {
   background: #92e0f8;
@@ -452,7 +455,7 @@ header button:hover {
 
 main#carousel {
   grid-row: 1;
-  grid-column: 1 / 6;
+  grid-column: 1 / 8;
   width: 100%;
   height: 560px;
   display: flex;
@@ -461,7 +464,7 @@ main#carousel {
   overflow: hidden;
   perspective: 600px;
   transform-style: preserve-3d;
-  --items: 3;
+  --items: 5; 
   --position: 1;
   pointer-events: none;
 }
@@ -473,7 +476,6 @@ main#carousel {
   padding: 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   color: white;
   background: #12151b;
   border: 1px solid #23272f;
@@ -509,18 +511,26 @@ main#carousel {
 #carousel.in-view .item:nth-of-type(1) { animation-delay: 0s;   }
 #carousel.in-view .item:nth-of-type(2) { animation-delay: .24s; }
 #carousel.in-view .item:nth-of-type(3) { animation-delay: .48s; }
+#carousel.in-view .item:nth-of-type(4) { animation-delay: .72s; }
+#carousel.in-view .item:nth-of-type(5) { animation-delay: .96s; }
 
 .item:nth-of-type(1) { --offset: 1; }
 .item:nth-of-type(2) { --offset: 2; }
 .item:nth-of-type(3) { --offset: 3; }
+.item:nth-of-type(4) { --offset: 4; }
+.item:nth-of-type(5) { --offset: 5; }
 
 #pos-1:checked ~ #carousel { --position: 1; }
 #pos-2:checked ~ #carousel { --position: 2; }
 #pos-3:checked ~ #carousel { --position: 3; }
+#pos-4:checked ~ #carousel { --position: 4; }
+#pos-5:checked ~ #carousel { --position: 5; }
 
 #pos-1:checked ~ #carousel .item:nth-of-type(1),
 #pos-2:checked ~ #carousel .item:nth-of-type(2),
-#pos-3:checked ~ #carousel .item:nth-of-type(3) {
+#pos-3:checked ~ #carousel .item:nth-of-type(3),
+#pos-4:checked ~ #carousel .item:nth-of-type(4),
+#pos-5:checked ~ #carousel .item:nth-of-type(5) {
   pointer-events: auto;
   border-color: #92e0f8;
   box-shadow: 0 0 40px rgba(146, 224, 248, .15);
@@ -571,7 +581,25 @@ main#carousel {
   margin-top: .75rem;
 }
 
+/* Project Two */
+
 .project-two-visuals {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+}
+
+.project-two-visuals img {
+  display: block;
+  max-width: 100%;
+  max-height: 350px;
+  object-fit: contain;
+}
+
+/* Project Three Visual Items */
+.project-three-visuals {
   flex: 1;
   display: flex;
   justify-content: center;
@@ -582,8 +610,8 @@ main#carousel {
   font-size: .85rem;
 }
 
-.project-two-visuals img,
-.project-two-visuals iframe {
+.project-three-visuals img,
+.project-three-visuals iframe {
   width: 100%;
   height: 100%;
   border: none;
