@@ -1,29 +1,35 @@
-
-html, body{
-  height: auto;
-  margin: 0;
-  padding-bottom: 0px;
+* {
+  box-sizing: border-box;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Audiowide&family=Syncopate:wght@400;700&family=VT323&family=Press+Start+2P&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+html, body {
+  height: auto;
+  min-height: 100%;
+  margin: 0;
+  padding-bottom: 0px;
+  gap: 5rem;
+  background: #000;
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
-font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-  Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
-  Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
-flex-direction: column;
-flex: 1;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 h1 {
-font-family: "Times New Roman", Times, serif;
-font-stretch: condensed; 
-font-size: x-large;
-font-weight: bold;
-letter-spacing: -0.5px;
-color: black;
-margin-top: 20px;
+  font-family: "Times New Roman", Times, serif;
+  font-stretch: condensed;
+  font-size: x-large;
+  font-weight: bold;
+  letter-spacing: -0.5px;
+  color: black;
+  margin-top: 20px;
 }
 
 /* Typewriter effect in Profile Section */
@@ -98,7 +104,7 @@ margin-top: 20px;
   .typewriter::after {
     animation: none;
   }
-  
+
   @keyframes sequencePopup {
     0%, 100% { content: "Researcher"; }
     25% { content: "Developer"; }
@@ -127,17 +133,18 @@ margin-top: 20px;
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
+  transition: .2s;
 }
 
 .circle:hover::before,
 .circle:hover::after {
-animation-play-state: paused;
+  animation-play-state: paused;
 }
 
 @keyframes rotate {
-to {
-  rotate: 360deg;
-}
+  to {
+    rotate: 360deg;
+  }
 }
 
 .project:hover {
@@ -176,6 +183,12 @@ to {
   font-size: small;
 }
 
+.project h1 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  justify-content: left-align;
+}
+
 .project img {
   float: left;
   margin-top: 17px;
@@ -183,225 +196,16 @@ to {
   height: auto;
 }
 
-html {
-scroll-behavior: smooth;
-}
-
-header {
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 5px 10%;
-background-color: #000;
-margin-bottom: 0;
-}
-
-header a {
-font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-font-weight: 500;
-font-size: 16px;
-color: white;
-text-decoration: none;
-}
-
-header li {
-font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-font-weight: 500;
-font-size: 16px;
-color: white;
-text-decoration: none;
-}
-
-.nav_links {
-list-style: none;
-margin: 0;
-padding: 0;
-}
-
-.nav_links li {
-display: inline-block;
-padding: 10px 20px;
-}
-
-.nav_links li a {
-transition: all .3s ease 0s;
-}
-
-.nav_links li a:hover {
-transition: all .3s ease 0s;
-color: #92e0f8;
-}
-
-.brooke_logo {
-height: 40px;
-width: 40px;
-}
-
-header button {
-padding: 7px 25px;
-background-color: rgb(255, 255, 255);
-border-radius: 40px;
-width: 125px;
-border: none;
-transition: all 0.3s ease 0s;
-font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-font-weight: 500;
-font-size: 16px;
-}
-
-header button:hover {
-background-color: rgba(255, 255, 255, 0.7);
-}
-
-.header_container {
-height: 100vh;
-display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
-background-color: black;
-margin-top: 0;
-width: auto;
-gap: 15px;
-}
-
-.pfp {
-width: 450px;
-height: 450px;
-margin-right: 50px;
-border-radius: 50%;
-object-fit: cover;
-position: relative;
-z-index: 1;
-}
-
-.pfp img {
-transition: .2s;
-}
-
-.pfp::before, .pfp::after {
-content: '';
-position: absolute;
-width: 455px;  /* slightly bigger than PFP */
-height: 455px;
-top: 50%;
-left: 50%;
-border-radius: 50%;
-background-image: conic-gradient(white, black, white);
-z-index: -1;
-translate: -50% -50%;
-animation: rotate 3s linear infinite;
-}
-
-.intro_wrapping {
-display: flex;
-margin-left: 100px;
-flex-direction: column;
-align-items: left;
-color: white;
-gap: 10px;
-animation: slide-up 1.7s;
-}
-
-@keyframes slide-up {
-from {
-  opacity: 0.2;
-  transform: translateY(100%);
-}
-
-to {
-  opacity: 1;
-  transform: translateY(0);
-}
-}
-
-.intro_wrapping h1 {
-font-size: 4rem;
-text-align: left;
-color: white;
-margin-bottom: 10px;
-}
-
-.about_me p {
-margin-top: 0px;
-text-align: left;
-font-size: 1rem;
-}
-
-.resume_button_container{
-margin-top: 50px;
-}
-
-.desktop_buttons {
-display: flex;
-flex-direction: row;
-align-items: center;
-justify-content: flex-start;
-gap: 25px;
-}
-
-.contact_white {
-size: 20px;
-}
-
-.github_white img {
-height: 33px;
-width: 35px;
-border-radius: 5px;
-}
-
-.linkedin_white img {
-height: 40px;
-width: 40px;
-}
-
-.contact_white img {
-height: 40px;
-width: 40px;
-border-radius: 8px;
-}
-
-.contact_white:hover {
-transform: scale(1.10);
-}
-
-.github_white:hover {
-transform: scale(1.10);
-}
-
-.linkedin_white:hover {
-transform: scale(1.10);
-}
-
-.project_three {
-padding-bottom: 150px;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html,
-body {
-  min-height: 100%;
-  margin: 0;
-  background: #000;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
-
-/*header*/
+/* header */
 
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 10%;
+  padding: 2px 5%;
   background: #000;
+  margin-bottom: 0;
+  margin-top: -4rem;
 }
 
 header a,
@@ -410,6 +214,7 @@ header li {
   text-decoration: none;
   font-size: 16px;
   font-weight: 500;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .nav_links {
@@ -432,8 +237,8 @@ header li {
 }
 
 .brooke_logo {
-  width: 40px;
   height: 40px;
+  width: 40px;
 }
 
 header button {
@@ -444,30 +249,157 @@ header button {
   background: white;
   font-size: 16px;
   font-weight: 500;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   transition: 0.3s;
 }
 
 header button:hover {
-  background: rgba(255,255,255,.7);
+  background: #00b8ff;
 }
 
 .mobile_nav {
   display: none;
 }
 
-.projects_heading {
-  color: white;
-  text-align: center;
-  font-size: 2.25rem;
-  font-weight: 600;
-  margin-top: 6rem;
+.header_container {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  margin-top: -4rem;
+  width: auto;
+  gap: 15px;
 }
 
-.projects_heading_two {
+.pfp {
+  width: 450px;
+  height: 450px;
+  margin-right: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: relative;
+  z-index: 1;
+}
+
+.pfp::before, .pfp::after {
+  content: '';
+  position: absolute;
+  width: 455px;
+  height: 455px;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  background-image: conic-gradient(white, black, white);
+  z-index: -1;
+  translate: -50% -50%;
+  animation: rotate 3s linear infinite;
+}
+
+.intro_wrapping {
+  display: flex;
+  margin-left: 100px;
+  flex-direction: column;
+  align-items: left;
   color: white;
-  text-align: center;
-  font-size: 1.25rem;
-  margin-top: 0; 
+  gap: 10px;
+  animation: slide-up 1.7s;
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0.2;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.intro_wrapping h1 {
+  font-size: 4rem;
+  text-align: left;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.about_me p {
+  margin-top: 0px;
+  text-align: left;
+  font-size: 1rem;
+}
+
+.resume_button_container {
+  margin-top: 50px;
+}
+
+.desktop_buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 25px;
+}
+
+.contact_white {
+  size: 20px;
+}
+
+.github_white img {
+  height: 33px;
+  width: 35px;
+  border-radius: 5px;
+}
+
+.linkedin_white img {
+  height: 40px;
+  width: 40px;
+}
+
+.contact_white img {
+  height: 40px;
+  width: 40px;
+  border-radius: 8px;
+}
+
+.contact_white:hover,
+.github_white:hover,
+.linkedin_white:hover {
+  transform: scale(1.10);
+}
+
+.project_three {
+  padding-bottom: 150px;
+}
+
+/* Projects heading */
+
+.projects_heading {
+  color: white;
+  text-align: left;
+  font-size: 2.25rem;
+  font-weight: 600;
+  margin: 3rem 0 1.5rem;
+  opacity: 0;
+  margin-left: 6rem;
+  margin-bottom: 2rem;
+}
+
+@keyframes headingEntrance {
+  from {
+    opacity: 0;
+    translate: 0 30px;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+.projects_heading.in-view {
+  animation: headingEntrance .6s cubic-bezier(.22, .61, .36, 1) both;
 }
 
 .carousel_page {
@@ -482,7 +414,7 @@ header button:hover {
   align-items: center;
 }
 
-/*carousel nav*/
+/* carousel nav */
 
 .carousel_page input[type="radio"] {
   grid-row: 2;
@@ -494,24 +426,17 @@ header button:hover {
   border: 2px solid #444;
   cursor: pointer;
   transition: .2s;
+  animation: dotsIn .4s ease .55s both;
 }
 
-.carousel_page input:nth-of-type(1) {
-  grid-column: 2;
-}
-
-.carousel_page input:nth-of-type(2) {
-  grid-column: 3;
-}
-
-.carousel_page input:nth-of-type(3) {
-  grid-column: 4;
-}
+.carousel_page input:nth-of-type(1) { grid-column: 2; }
+.carousel_page input:nth-of-type(2) { grid-column: 3; }
+.carousel_page input:nth-of-type(3) { grid-column: 4; }
 
 .carousel_page input:checked {
   background: #92e0f8;
   border-color: #92e0f8;
-  box-shadow: 0 0 0 3px rgba(146,224,248,.25);
+  box-shadow: 0 0 0 3px rgba(146, 224, 248, .25);
 }
 
 @keyframes dotsIn {
@@ -519,11 +444,7 @@ header button:hover {
   to   { opacity: 1; transform: translateY(0); }
 }
 
-.carousel_page input[type="radio"] {
-  animation: dotsIn .4s ease .55s both;
-}
-
-/*carousel*/
+/* carousel */
 
 main#carousel {
   grid-row: 1;
@@ -539,7 +460,6 @@ main#carousel {
   --items: 3;
   --position: 1;
   pointer-events: none;
-  animation: carouselFade 0.8s cubic-bezier(.22, .61, .36, 1);
 }
 
 .item {
@@ -586,36 +506,20 @@ main#carousel {
 #carousel.in-view .item:nth-of-type(2) { animation-delay: .24s; }
 #carousel.in-view .item:nth-of-type(3) { animation-delay: .48s; }
 
-.item:nth-of-type(1) {
-  --offset: 1;
-}
+.item:nth-of-type(1) { --offset: 1; }
+.item:nth-of-type(2) { --offset: 2; }
+.item:nth-of-type(3) { --offset: 3; }
 
-.item:nth-of-type(2) {
-  --offset: 2;
-}
-
-.item:nth-of-type(3) {
-  --offset: 3;
-}
-
-#pos-1:checked ~ #carousel {
-  --position: 1;
-}
-
-#pos-2:checked ~ #carousel {
-  --position: 2;
-}
-
-#pos-3:checked ~ #carousel {
-  --position: 3;
-}
+#pos-1:checked ~ #carousel { --position: 1; }
+#pos-2:checked ~ #carousel { --position: 2; }
+#pos-3:checked ~ #carousel { --position: 3; }
 
 #pos-1:checked ~ #carousel .item:nth-of-type(1),
 #pos-2:checked ~ #carousel .item:nth-of-type(2),
 #pos-3:checked ~ #carousel .item:nth-of-type(3) {
   pointer-events: auto;
   border-color: #92e0f8;
-  box-shadow: 0 0 40px rgba(146,224,248,.15);
+  box-shadow: 0 0 40px rgba(146, 224, 248, .15);
 }
 
 /* slide styling */
@@ -668,7 +572,7 @@ main#carousel {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(255,255,255,.06);
+  background: rgba(255, 255, 255, .06);
   border-radius: 8px;
   color: #888;
   font-size: .85rem;
@@ -765,7 +669,18 @@ main#carousel {
 
 .social-links:hover {
   padding: 1rem;
-  box-shadow: -8px 0 20px rgba(146,224,248,.6);
+  box-shadow: -8px 0 20px rgba(146, 224, 248, .6);
+}
+
+@keyframes socialSlideIn {
+  from {
+    opacity: 0;
+    translate: 60px 0;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
 }
 
 .links-list {
@@ -800,18 +715,7 @@ main#carousel {
 }
 
 .social-link img:hover {
-    transform: scale(1.2);
-}
-
-@keyframes socialSlideIn {
-  from {
-    opacity: 0;
-    translate: 60px 0;
-  }
-  to {
-    opacity: 1;
-    translate: 0 0;
-  }
+  transform: scale(1.2);
 }
 
 #github-research img {
@@ -846,45 +750,23 @@ main#carousel {
   white-space: nowrap;
 }
 
-/* Projects Font Styling */
-
-.projects_heading {
-  color: white;
-  text-align: center;
-  font-size: 2.25rem;
-  font-weight: 600;
-  margin: 3rem 0 1.5rem;
-  opacity: 0;
-}
-
-@keyframes headingEntrance {
-  from {
-    opacity: 0;
-    translate: 0 30px;
-  }
-  to {
-    opacity: 1;
-    translate: 0 0;
-  }
-}
-
-.projects_heading.in-view {
-  animation: headingEntrance .6s cubic-bezier(.22, .61, .36, 1) both;  
-}
-
 /* Github Repo Section */
 
 .contribution-scroll {
   width: 80%;
   margin: 0 auto;
   overflow-x: auto;
+  border: 1px solid #92e0f8;
+  border-radius: 8px;
+  padding: 0.5rem 1rem 1rem;
+  background: #12151b; /* matches your existing card background elsewhere on the page */
 }
 
 #contribution-table {
   opacity: 0;
   border-collapse: separate;
-  animation: slideUp 2s ease;
   border-spacing: clamp(1px, 0.3vw, 3px);
+  margin: 0 auto;
 }
 
 #contribution-table.in-view {
@@ -904,16 +786,23 @@ main#carousel {
 
 #commit_count {
   text-align: center;
-  margin-bottom: 1rem;
-  animation: slideUp 2s ease;
+  opacity: 0;
+  margin-left: 5rem;
+}
+
+#commit_count.in-view {
+  animation: slideUp 2s ease forwards;
 }
 
 #commit_count p {
   font-size: clamp(0.5rem, 1vw, 0.8rem);
   overflow: hidden;
   text-overflow: ellipsis;
-  text-align:left;
-  margin-left: 6rem;
+  text-align: left;
+}
+
+.github_block {
+  width: 100%;
 }
 
 @keyframes slideUp {
@@ -935,6 +824,7 @@ main#carousel {
 }
 
 #tech_stack {
+  margin-top: 3.5rem;
   width: 100%;
   overflow: hidden;
   position: relative;
@@ -943,7 +833,7 @@ main#carousel {
 #tech_stack::before,
 #tech_stack::after {
   content: "";
-  position: absolute;
+  position: relative;
   top: 0;
   height: 100%;
   width: 150px;
@@ -981,11 +871,25 @@ main#carousel {
   object-fit: contain;
 }
 
+.skill-slides img {
+  height: 80px;
+  width: 80px;
+}
+
 .proficiencies {
   display: flex;
   justify-content: center;
   gap: 1rem;
   flex-wrap: column;
-  margin-right: 6rem;
-  margin-left: 6rem;
+}
+
+/* More Transitions */
+
+#tech_stack {
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+#tech_stack.in-view {
+  opacity: 1;
 }
