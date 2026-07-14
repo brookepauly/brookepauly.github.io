@@ -2,12 +2,16 @@
   box-sizing: border-box;
 }
 
+:root {
+  --section-gap: 10rem;
+}
+
 html, body {
   height: auto;
   min-height: 100%;
   margin: 0;
   padding-bottom: 0px;
-  gap: 8rem;
+  gap: var(--section-gap);
   background: #000;
 }
 
@@ -205,7 +209,7 @@ header {
   padding: 2px 5%;
   background: #000;
   margin-bottom: 0;
-  margin-top: -8rem;
+  margin-top: calc(-1 * var(--section-gap));
 }
 
 header a,
@@ -268,7 +272,7 @@ header button:hover {
   justify-content: center;
   align-items: center;
   background-color: black;
-  margin-top: -8rem;
+  margin-top: calc(-1 * var(--section-gap));
   margin-bottom: 0;
   width: auto;
 }
@@ -758,7 +762,7 @@ main#carousel {
   font-size: 2.25rem;
   font-weight: 600;
   opacity: 0;
-  margin-top: -8rem;
+  margin-top: calc(-1 * var(--section-gap));
   margin-left: 5rem;
 }
 
@@ -894,7 +898,7 @@ main#carousel {
   display: flex;
   justify-content: center;
   gap: 1rem;
-  margin-top: -8rem;
+  margin-top: calc(-1 * var(--section-gap));
   flex-wrap: column;
 }
 
