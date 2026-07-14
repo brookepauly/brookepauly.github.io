@@ -932,6 +932,16 @@ main#carousel {
   resize: none;
 }
 
+#contact button img {
+  height: 40px;
+  width: 40px;
+  border-radius: 10px;
+}
+
+#contact button {
+  border-radius: 10px;
+}
+
 #contact.in-view {
   animation: slideUp 1s ease forwards;
 }
