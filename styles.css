@@ -1069,16 +1069,17 @@ main#carousel::after {
 }
 
 .header.scrolled .hamburger {
-    opacity: 1;
-    transform: translateY(0) scale(1);
+  opacity: 1;
+  transform: translateY(0) scale(1);
 }
 
 .header.scrolled .nav_links {
-    opacity: 0;
-    transform: translateY(-20px);
-    pointer-events: none;
+  opacity: 0;
+  transform: translateY(-20px);
+  pointer-events: none;
 }
 
 .header.scrolled .cta {
-    display: none;
+  display: none;
 }
+
