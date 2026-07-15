@@ -1,4 +1,4 @@
-/* Scroll Animation */
+// Scroll Animation 
 const scrollObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -18,7 +18,7 @@ function revealSocialLinks() {
 
 window.addEventListener('scroll', revealSocialLinks);
 
-/* Rendering Commits from GitHub API */
+// Rendering Commits from GitHub API 
 
 document.addEventListener('DOMContentLoaded', () => {
   fetch('commits.json')
@@ -47,3 +47,17 @@ document.addEventListener('DOMContentLoaded', () => {
     .catch(err => console.error('Error:', err));
 });
 
+// Header Animation 
+
+const header = document.getElementById("header");
+
+window.addEventListener("scroll", () => {
+
+    if(window.scrollY > 100){
+        header.classList.add("scrolled");
+    } 
+    else {
+        header.classList.remove("scrolled");
+    }
+
+});

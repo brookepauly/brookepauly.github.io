@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
+    <header class = "header" id = "header">
         <img class = "brooke_logo" src = "./Files/code_favicon.png" alt = "logo">
         <nav>
             <ul class = "nav_links">
@@ -24,6 +24,9 @@
                 <li> <a href = "https://drive.google.com/file/d/15yLa9zOJjDJ7TS9q4iY6GbH2DEjjP1Ko/view?usp=sharing"> View Resume </a> </li>
             </ul>
         </nav>
+        <button class="hamburger" id="hamburger">
+            ☰
+        </button>
         <a class = "cta" href = "mailto:bpauly2003@gmail.com"> <button> Contact </button> </a>
     </header>
     <!-- name, pfp, and about me -->
@@ -172,27 +175,6 @@
             </main>
         </div>
     </section>
-    <aside class="social-links">
-        <ul class="links-list">
-            <li class="social-link">
-                <a href="mailto:bpauly2003@gmail.com" aria-label="Email">
-                    <img src="./Files/mail_white_logo.webp" alt="Email">
-                </a>
-            </li>
-    
-            <li class="social-link">
-                <a href="https://www.linkedin.com/in/brooke-pauly/" target="_blank" aria-label="LinkedIn">
-                    <img src="./Files/linkedin_white_logo.png" alt="LinkedIn">
-                </a>
-            </li>
-    
-            <li class="social-link">
-                <a href="https://github.com/brookepauly" target="_blank" aria-label="GitHub">
-                    <img src="./Files/github_white_logo_edited.png" alt="GitHub">
-                </a>
-            </li>
-        </ul>
-    </aside>
     <form action="https://api.web3forms.com/submit" method="POST" id = "contact" class = "scroll-animate">
         <input type="hidden" name="access_key" value="f6dd6851-9214-419f-94ed-f923eb8e6ae9">
         <h1> Contact Me </h1>
