@@ -23,7 +23,16 @@ body {
   display: flex;
   flex-direction: column;
   flex: 1;
-  cursor: url('./Files/blue_pixel.png'), auto;
+  cursor: url('./Files/3d_pixel_cursor.png'), auto;
+}
+
+a, 
+button, 
+input[type="submit"], 
+input[type="button"],
+.carousel_page input[type="radio"],
+.clickable-element {
+  cursor: url("./Files/3d_pixel_pointer.png"), pointer;
 }
 
 .page-content {
@@ -424,7 +433,6 @@ header button:hover {
   height: 12px;
   border-radius: 50%;
   border: 2px solid #444;
-  cursor: pointer;
   transition: .2s;
   animation: dotsIn .4s ease .55s both;
 }
@@ -461,7 +469,6 @@ main#carousel {
   transform-style: preserve-3d;
   --items: 5; 
   --position: 1;
-  pointer-events: none;
   position: relative;
 }
 
@@ -472,8 +479,7 @@ main#carousel::after {
   top: 0;
   height: 100%;
   width: 140px;
-  z-index: 6; 
-  pointer-events: none;
+  z-index: 6;
 }
 
 main#carousel::before {
@@ -548,7 +554,6 @@ main#carousel::after {
 #pos-3:checked ~ #carousel .item:nth-of-type(3),
 #pos-4:checked ~ #carousel .item:nth-of-type(4),
 #pos-5:checked ~ #carousel .item:nth-of-type(5) {
-  pointer-events: auto;
   border-color: #92e0f8;
   box-shadow: 0 0 40px rgba(146, 224, 248, .15);
 }
@@ -667,7 +672,6 @@ main#carousel::after {
   border-radius: .5rem;
   font-size: 16px;
   transition: .4s ease-out;
-  cursor: pointer;
 }
 
 .project_button span {
@@ -849,7 +853,6 @@ main#carousel::after {
   height: 100%;
   width: 150px;
   z-index: 2;
-  pointer-events: none;
 }
 
 #tech_stack::before {
@@ -994,7 +997,6 @@ main#carousel::after {
   border-radius: .5rem;
   font-size: 16px;
   transition: .4s ease-out;
-  cursor: pointer;
 }
 
 #contact button span {
@@ -1056,7 +1058,6 @@ main#carousel::after {
   right: 30px;
   opacity: 0;
   transform: translateY(-20px) scale(.8);
-  pointer-events: none;
   transition: .4s ease;
   width: 55px;
   height: 55px;
@@ -1074,7 +1075,6 @@ main#carousel::after {
 .header.scrolled .nav_links {
   opacity: 0;
   transform: translateY(-20px);
-  pointer-events: none;
 }
 
 .header.scrolled .cta {
