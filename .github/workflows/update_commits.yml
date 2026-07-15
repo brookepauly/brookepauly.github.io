@@ -13,10 +13,13 @@ jobs:
 
       - name: Fetch commits
         run: |
+          FROM_DATE=$(date -u -d "1 year ago last sunday" +"%Y-%m-%dT00:00:00Z")
+          TO_DATE=$(date -u +"%Y-%m-%dT23:59:59Z")
+
           curl -X POST \
           -H "Authorization: bearer ${{ secrets.PERSONAL_TOKEN }}" \
           -H "Content-Type: application/json" \
-          -d '{"query": "{ viewer { contributionsCollection(from: \"2025-08-03T00:00:00Z\") { contributionCalendar { totalContributions weeks { contributionDays { contributionCount date } } } } } }"}' \
+          -d "{\"query\": \"{ viewer { contributionsCollection(from: \\\"$FROM_DATE\\\", to: \\\"$TO_DATE\\\") { contributionCalendar { totalContributions weeks { contributionDays { contributionCount date } } } } } }\"}" \
           https://api.github.com/graphql \
           > commits.json
 
