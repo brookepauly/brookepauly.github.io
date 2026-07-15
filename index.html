@@ -29,161 +29,168 @@
         </button>
         <a class = "cta" href = "mailto:bpauly2003@gmail.com"> <button> Contact </button> </a>
     </header>
-    <!-- name, pfp, and about me -->
-    <div class = "header_container" >
-        <div class = "pfp"> 
-            <img class = "pfp_image" src = "./Files/copy_pfp.jpg" alt = "profile pic"> 
-        </div>
-        <div class = "intro_wrapping">
-            <div class = "name_header">
-                <h1>
-                    Brooke Pauly
-                </h1>
-
-                <h2 aria-label="I'm a">
-
-                <span class="typewriter"></span>
-
-                </h2>
-            </div>
-            <div class = "about_me" >
-                <p>
-                    PLACEHOLDER
-                </p>
-            </div>
-            <div class = "desktop_buttons">
-                <div class = "linkedin_white">
-                    <a href = "https://www.linkedin.com/in/brooke-pauly/" >
-                        <img src = "./Files/linkedin_white_logo.png" alt = "linkedin_icon_white" >
-                    </a>
+    <div class = "page-content">
+        <!-- name, pfp, and about me -->
+        <section>
+            <div class = "header_container" >
+                <div class = "pfp"> 
+                    <img class = "pfp_image" src = "./Files/copy_pfp.jpg" alt = "profile pic"> 
                 </div>
-                <div class = "github_white">
-                    <a href = "https://github.com/brookepauly" >
-                        <img src = "./Files/github_white_logo_edited.png" alt = "github_icon_white" >
-                    </a>
+                <div class = "intro_wrapping">
+                    <div class = "name_header">
+                        <h1>
+                            Brooke Pauly
+                        </h1>
+
+                        <h2 aria-label="I'm a">
+
+                        <span class="typewriter"></span>
+
+                        </h2>
+                    </div>
+                    <div class = "about_me" >
+                        <p>
+                            PLACEHOLDER
+                        </p>
+                    </div>
+                    <div class = "desktop_buttons">
+                        <div class = "linkedin_white">
+                            <a href = "https://www.linkedin.com/in/brooke-pauly/" >
+                                <img src = "./Files/linkedin_white_logo.png" alt = "linkedin_icon_white" >
+                            </a>
+                        </div>
+                        <div class = "github_white">
+                            <a href = "https://github.com/brookepauly" >
+                                <img src = "./Files/github_white_logo_edited.png" alt = "github_icon_white" >
+                            </a>
+                        </div>
+                        <div class = "contact_white">
+                            <a href = "mailto:bpauly2003@gmail.com">
+                                <img src = "./Files/mail_white_logo.webp" alt = "email_icon_white" >
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class = "contact_white">
-                    <a href = "mailto:bpauly2003@gmail.com">
-                        <img src = "./Files/mail_white_logo.webp" alt = "email_icon_white" >
-                    </a>
-                </div>
             </div>
-        </div>
-    </div>
+        </section>
 
-    <!-- Skills Section -->
-
-    <h1 class = "proficiencies_header scroll-animate" id = "prof_skills"> Skills </h1>
-    <div class = "proficiencies">
-        <div class = "github_block scroll-animate">
-            <div id="commit_count" class="scroll-animate"></div>
-            <div class="contribution-scroll scroll-animate">
-                <table id="contribution-table" class="scroll-animate"></table>
-            </div>
-        </div>
-
-        <div id = "tech_stack" class = "scroll-animate">
-            <div class = "skill-slides">
-                <div class="skill-slide"><img src="./Files/Confluence_Logo.webp" alt="html_logo" id = "confluence-logo"></div>
-                <div class="skill-slide"><img src="./Files/python_logo.png" alt="html_logo" id = "python-logo"></div>
-                <div class="skill-slide"><img src="./Files/R_Studio_Logo.png" alt="html_logo" id = "r-studio-logo"></div>
-                <div class="skill-slide"><img src="./Files/DataBricks_Logo.png" alt="html_logo" id = "databricks-logo"></div>
-                <div class="skill-slide"><img src="./Files/Tableau_Logo.png" alt="html_logo" id = "tableau-logo"></div>
-                <div class="skill-slide"><img src="./Files/sql_logo.webp" alt="html_logo" id = "sql-logo"></div>
-                <div class="skill-slide"><img src="./Files/SPSS_Logo.png" alt="html_logo" id = "spss-logo"></div>
-                <!-- duplicate set starts here, identical to above -->
-                <div class="skill-slide"><img src="./Files/Confluence_Logo.webp" alt="html_logo" id = "confluence-logo"></div>
-                <div class="skill-slide"><img src="./Files/python_logo.png" alt="html_logo" id = "python-logo"></div>
-                <div class="skill-slide"><img src="./Files/R_Studio_Logo.png" alt="html_logo" id = "r-studio-logo"></div>
-                <div class="skill-slide"><img src="./Files/DataBricks_Logo.png" alt="html_logo" id = "databricks-logo"></div>
-                <div class="skill-slide"><img src="./Files/Tableau_Logo.png" alt="html_logo" id = "tableau-logo"></div>
-                <div class="skill-slide"><img src="./Files/sql_logo.webp" alt="html_logo" id = "sql-logo"></div>
-                <div class="skill-slide"><img src="./Files/SPSS_Logo.png" alt="html_logo" id = "spss-logo"></div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Projects Section -->
-    
-    <section id = "projects">
-        <h1 class="projects_heading scroll-animate"> Projects </h1>
-
-        <div class="carousel_page">
-            <input type="radio" name="position" id="pos-1" />
-            <input type="radio" name="position" id="pos-2" />
-            <input type="radio" name="position" id="pos-3" checked />
-            <input type="radio" name="position" id="pos-4" />
-            <input type="radio" name="position" id="pos-5" />
-
-            <main id="carousel" class = "scroll-animate">
-                <div class="item project-layout" id="slide-1">
-                    <h2> This Website </h2>
-                    <p>Description of the project and what you built.</p>
+        <!-- Skills Section -->
+        <section>
+            <h1 class = "proficiencies_header scroll-animate" id = "prof_skills"> Skills </h1>
+            <div class = "proficiencies">
+                <div class = "github_block scroll-animate">
+                    <div id="commit_count" class="scroll-animate"></div>
+                    <div class="contribution-scroll scroll-animate">
+                        <table id="contribution-table" class="scroll-animate"></table>
+                    </div>
                 </div>
 
-                <div class="item project-layout" id="slide-2">
-                    <div class="project-text">
-                        <div class="text-content">
-                            <h2>Gravity Game</h2>
-                            <p>A browser-based physics game where falling stars carry Japanese vocabulary — built to combine two things I actually care about: coding and language learning.</p>
-                            <div class="skill-tags">
-                                <span class="skill-tag">JavaScript</span>
-                                <span class="skill-tag">HTML</span>
-                                <span class="skill-tag">CSS</span>
+                <div id = "tech_stack" class = "scroll-animate">
+                    <div class = "skill-slides">
+                        <div class="skill-slide"><img src="./Files/Confluence_Logo.webp" alt="html_logo" id = "confluence-logo"></div>
+                        <div class="skill-slide"><img src="./Files/python_logo.png" alt="html_logo" id = "python-logo"></div>
+                        <div class="skill-slide"><img src="./Files/R_Studio_Logo.png" alt="html_logo" id = "r-studio-logo"></div>
+                        <div class="skill-slide"><img src="./Files/DataBricks_Logo.png" alt="html_logo" id = "databricks-logo"></div>
+                        <div class="skill-slide"><img src="./Files/Tableau_Logo.png" alt="html_logo" id = "tableau-logo"></div>
+                        <div class="skill-slide"><img src="./Files/sql_logo.webp" alt="html_logo" id = "sql-logo"></div>
+                        <div class="skill-slide"><img src="./Files/SPSS_Logo.png" alt="html_logo" id = "spss-logo"></div>
+                        <!-- duplicate set starts here, identical to above -->
+                        <div class="skill-slide"><img src="./Files/Confluence_Logo.webp" alt="html_logo" id = "confluence-logo"></div>
+                        <div class="skill-slide"><img src="./Files/python_logo.png" alt="html_logo" id = "python-logo"></div>
+                        <div class="skill-slide"><img src="./Files/R_Studio_Logo.png" alt="html_logo" id = "r-studio-logo"></div>
+                        <div class="skill-slide"><img src="./Files/DataBricks_Logo.png" alt="html_logo" id = "databricks-logo"></div>
+                        <div class="skill-slide"><img src="./Files/Tableau_Logo.png" alt="html_logo" id = "tableau-logo"></div>
+                        <div class="skill-slide"><img src="./Files/sql_logo.webp" alt="html_logo" id = "sql-logo"></div>
+                        <div class="skill-slide"><img src="./Files/SPSS_Logo.png" alt="html_logo" id = "spss-logo"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Projects Section -->
+        <section id = "projects">
+            <h1 class="projects_heading scroll-animate"> Projects </h1>
+
+            <div class="carousel_page">
+                <input type="radio" name="position" id="pos-1" />
+                <input type="radio" name="position" id="pos-2" />
+                <input type="radio" name="position" id="pos-3" checked />
+                <input type="radio" name="position" id="pos-4" />
+                <input type="radio" name="position" id="pos-5" />
+
+                <main id="carousel" class = "scroll-animate">
+                    <div class="item project-layout" id="slide-1">
+                        <h2> This Website </h2>
+                        <p>Description of the project and what you built.</p>
+                    </div>
+
+                    <div class="item project-layout" id="slide-2">
+                        <div class="project-text">
+                            <div class="text-content">
+                                <h2>Gravity Game</h2>
+                                <p>A browser-based physics game where falling stars carry Japanese vocabulary — built to combine two things I actually care about: coding and language learning.</p>
+                                <div class="skill-tags">
+                                    <span class="skill-tag">JavaScript</span>
+                                    <span class="skill-tag">HTML</span>
+                                    <span class="skill-tag">CSS</span>
+                                </div>
+                            </div>
+                        </div>  
+                        <div class="bottom-visuals">
+                            <div class="project-two-visuals">
+                                <img src="Files/gravity_game.gif" alt="game demo gif">
                             </div>
                         </div>
                     </div>  
-                    <div class="bottom-visuals">
-                        <div class="project-two-visuals">
-                            <img src="Files/gravity_game.gif" alt="game demo gif">
-                        </div>
-                    </div>
-                </div>  
-                <div class="item project-layout" id="slide-3">
-                    <div class="project-text">
-                        <div class="text-content">
-                            <h2>Polarization Research</h2>
-                            <p>Description of the project and what you built. Description of the project and what you built. Description of the project and what you built. Description of the project and what you built.Description of the project and what you built.Description of the project and what you built.Description of the project and what you built.</p>
-                            <div class="skill-tags">
-                                <span class="skill-tag"> ggplot2 </span>
-                                <span class="skill-tag"> TidyVerse </span>
-                                <span class="skill-tag"> R Studio </span>
+                    <div class="item project-layout" id="slide-3">
+                        <div class="project-text">
+                            <div class="text-content">
+                                <h2>Polarization Research</h2>
+                                <p>Description of the project and what you built. Description of the project and what you built. Description of the project and what you built. Description of the project and what you built.Description of the project and what you built.Description of the project and what you built.Description of the project and what you built.</p>
+                                <div class="skill-tags">
+                                    <span class="skill-tag"> ggplot2 </span>
+                                    <span class="skill-tag"> TidyVerse </span>
+                                    <span class="skill-tag"> R Studio </span>
+                                </div>
+                            </div>
+                            <div class="research-buttons">
+                                <a href="https://app.swapcard.com/event/ppe-society-ninth-am/planning/UGxhbm5pbmdfMjczMjk0NQ==" target="_blank">
+                                    <button class="project_button"><span>Conference Information</span></button>
+                                </a>
+                                <a href="https://github.com/brookepauly" target="_blank" aria-label="GitHub" id = "github-research">
+                                    <img src="./Files/github_white_logo_edited.png" alt="GitHub">
+                                </a>
                             </div>
                         </div>
-                        <div class="research-buttons">
-                            <a href="https://app.swapcard.com/event/ppe-society-ninth-am/planning/UGxhbm5pbmdfMjczMjk0NQ==" target="_blank">
-                                <button class="project_button"><span>Conference Information</span></button>
-                            </a>
-                            <a href="https://github.com/brookepauly" target="_blank" aria-label="GitHub" id = "github-research">
-                                <img src="./Files/github_white_logo_edited.png" alt="GitHub">
-                            </a>
+                        <div class="bottom-visuals">
+                            <div class="project-three-visuals">
+                                <iframe src="Files\Polarization_Research.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
+                                    width="100%" height="100%" allowfullscreen="true" frameborder="0"></iframe>
+                            </div>
                         </div>
                     </div>
-                    <div class="bottom-visuals">
-                        <div class="project-three-visuals">
-                            <iframe src="Files\Polarization_Research.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
-                                width="100%" height="100%" allowfullscreen="true" frameborder="0"></iframe>
-                        </div>
+                    <div class="item project-layout" id="slide-4">
+                        <h2> Linear Regression Project </h2>
                     </div>
-                </div>
-                <div class="item project-layout" id="slide-4">
-                    <h2> Linear Regression Project </h2>
-                </div>
-                <div class="item project-layout" id="slide-5">
-                    <h2> Project 5 </h2>
-                </div>
-            </main>
-        </div>
-    </section>
-    <form action="https://api.web3forms.com/submit" method="POST" id = "contact" class = "scroll-animate">
-        <input type="hidden" name="access_key" value="f6dd6851-9214-419f-94ed-f923eb8e6ae9">
-        <h1> Contact Me </h1>
-        <input type = "text" id = "email" name = "email" placeholder = "Your Email">
-        <textarea id="message" name="message" placeholder="Your Message"></textarea>
-        <button type="submit">
-            <span> Send </span>
-        </button>
-    </form>
+                    <div class="item project-layout" id="slide-5">
+                        <h2> Project 5 </h2>
+                    </div>
+                </main>
+            </div>
+        </section>
+        <section>
+            <form action="https://api.web3forms.com/submit" method="POST" id = "contact" class = "scroll-animate">
+                <input type="hidden" name="access_key" value="f6dd6851-9214-419f-94ed-f923eb8e6ae9">
+                <h1> Contact Me </h1>
+                <input type = "text" id = "email" name = "email" placeholder = "Your Email">
+                <textarea id="message" name="message" placeholder="Your Message"></textarea>
+                <button type="submit">
+                    <span> Send </span>
+                </button>
+            </form>
+        </section>
+    </div>
     <script src="scroll.js"></script>
 </body>
 </html>
