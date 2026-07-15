@@ -3,7 +3,7 @@
 }
 
 :root {
-  --section-gap: 12rem;
+  --section-gap: 16rem;
 }
 
 html, body {
@@ -748,7 +748,6 @@ main#carousel::after {
   font-weight: 600;
   opacity: 0;
   margin-left: 5rem;
-  margin-top: calc(-1 * var(--section-gap));
 }
 
 .proficiencies_header.in-view {
@@ -777,8 +776,8 @@ main#carousel::after {
 }
 
 #contribution-table td {
-  width: clamp(4px, 1vw, 10px);
-  height: clamp(4px, 1vw, 10px);
+  width: clamp(6px, 1vw, 20px);
+  height: clamp(6px, 1vw, 20px);
   border-radius: 3px;
 }
 
@@ -1148,7 +1147,80 @@ main#carousel::after {
 
 /* Experience Section */
 
-#experience h1 {
+.experience {
+    width: min(1100px, 90%);
+    margin: 0 auto;
+}
+
+.timeline {
+  position: relative;
+  margin-left: 60px;
+  padding-bottom: 15px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: -42px;
+  top: 15px;
+  width: 2px;
+  height: calc(100% - 30px);
+  background: #2d2d2d;
+}
+
+.timeline::before {
+  height: calc(100% - 15px);
+}
+
+.timeline-progress {
+  position: absolute;
+  left: -42px;
+  top: 15px;
+  width: 2px;
+  height: 0;
+  background: #92e0f8;
+  transition: height .1s linear;
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: 80px;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -48px;
+  top: 8px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #92e0f8;
+}
+
+.timeline-content {
+  width: min(900px, 85vw);
+  padding: 28px;
+  border-radius: 16px;
+  background: #16181d;
+  margin-left: 60px;
+  border: 1px solid #92e0f8;
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline::before {
+  height: calc(100% - 160px);
+}
+
+.timeline-progress {
+  max-height: calc(100% - 160px);
+}
+
+
+.experience h1 {
   color: white;
+  padding-bottom: 3rem;
 }
 

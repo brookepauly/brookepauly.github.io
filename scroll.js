@@ -89,3 +89,24 @@ menuLinks.forEach(link => {
         }, 500);
     });
 });
+
+// Experience Animation
+
+const timeline = document.querySelector(".timeline");
+const progress = document.querySelector(".timeline-progress");
+
+window.addEventListener("scroll", () => {
+
+    const rect = timeline.getBoundingClientRect();
+
+    const start = window.innerHeight * 0.2;
+    const end = rect.height;
+
+    let progressHeight = start - rect.top;
+
+    progressHeight = Math.max(0, progressHeight);
+    progressHeight = Math.min(progressHeight, end);
+
+    progress.style.height = `${progressHeight}px`;
+
+});
