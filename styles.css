@@ -768,6 +768,24 @@ main#carousel::after {
   background: #12151b;
 }
 
+#month-labels {
+    display: grid;
+    grid-template-columns: repeat(53, clamp(6px, 1vw, 20px));
+    gap: clamp(1px, 0.3vw, 3px);
+    margin-left: 35px;
+    height: 20px;
+}
+
+#day-labels {
+    width: 30px;
+    height: calc(7 * clamp(6px, 1vw, 20px) + 6 * clamp(1px, 0.3vw, 3px));
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color: white;
+    font-size: 12px;
+}
+
 #contribution-table {
   opacity: 0;
   border-collapse: separate;
@@ -777,6 +795,17 @@ main#carousel::after {
 
 #contribution-table.in-view {
   animation: slideUp 2s ease forwards;
+}
+
+.calendar-body {
+    display: flex;
+    align-items: flex-start;
+}
+
+.month {
+    font-size: 12px;
+    color: white;
+    white-space: nowrap;
 }
 
 #contribution-table td {

@@ -33,13 +33,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const rows = Array.from({ length: 7 }, () => document.createElement('tr'));
 
-      weeks.forEach(week => {
+      const monthLabels = document.getElementById("month-labels");
+      let lastMonth = "";
+
+      weeks.forEach((week, weekIndex) => {
+
+        // Create month labels
+        const date = new Date(week.contributionDays[0].date);
+        const month = date.toLocaleString("default", { month: "short" });
+
+        if (month !== lastMonth) {
+          const span = document.createElement("span");
+          span.className = "month";
+          span.textContent = month;
+          span.style.gridColumn = weekIndex + 1;
+
+          monthLabels.appendChild(span);
+
+          lastMonth = month;
+        }
+
+        // Create contribution squares
         week.contributionDays.forEach((day, dayIndex) => {
           const td = document.createElement('td');
           const count = day.contributionCount;
-          td.className = `color-${count === 0 ? 0 : count < 5 ? 1 : count < 10 ? 2 : count < 15 ? 3 : 4}`;
+
+          td.className =
+            `color-${count === 0 ? 0 :
+              count < 5 ? 1 :
+              count < 10 ? 2 :
+              count < 15 ? 3 : 4}`;
+
           rows[dayIndex].appendChild(td);
         });
+
       });
 
       rows.forEach(row => contributionTable.appendChild(row));
