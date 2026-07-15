@@ -1069,3 +1069,9 @@ main#carousel::after {
   display: none;
 }
 
+/* Experience Section */
+
+#experience h1 {
+  color: white;
+}
+
