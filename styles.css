@@ -741,6 +741,10 @@ main#carousel::after {
 
 /* Github Repo Section */
 
+#skills {
+  margin-top: -16rem;
+}
+
 .proficiencies_header {
   color: white;
   text-align: left;
