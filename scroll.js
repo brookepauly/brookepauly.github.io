@@ -3,7 +3,8 @@ const scrollObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('in-view');
-      scrollObserver.unobserve(entry.target);
+    } else {
+      entry.target.classList.remove('in-view');
     }
   });
 }, { threshold: 0.2 });
