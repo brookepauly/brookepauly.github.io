@@ -1032,42 +1032,119 @@ main#carousel::after {
   border-radius: .5rem;
 }
 
-/* Nav Bar Animation */
+/* Hamburger */
 
 .nav_links {
-  transition:
-        opacity .4s ease,
-        transform .4s ease;
-}
-
-.hamburger {
-  position: fixed;
-  top: 30px;
-  right: 30px;
-  opacity: 0;
-  transform: translateY(-20px) scale(.8);
-  transition: .4s ease;
-  width: 55px;
-  height: 55px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.header.scrolled .hamburger {
-  opacity: 1;
-  transform: translateY(0) scale(1);
+    transition: opacity .4s ease, transform .4s ease;
 }
 
 .header.scrolled .nav_links {
-  opacity: 0;
-  transform: translateY(-20px);
+    opacity: 0;
+    transform: translateY(-20px);
 }
 
 .header.scrolled .cta {
-  display: none;
+    display: none;
 }
+
+.hamburger {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    background: #12151b;
+    border: 1px solid #23272f;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(-20px) scale(.8);
+    transition: .4s ease;
+    z-index: 2000;
+}
+
+.header.scrolled .hamburger {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.hamburger-line {
+    width: 22px;
+    height: 2px;
+    background: white;
+    border-radius: 2px;
+    transition: transform .3s ease, opacity .3s ease;
+}
+
+.hamburger.open .hamburger-line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.open .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.open .hamburger-line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+.hamburger-wrapper {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    clip-path: circle(0% at calc(100% - 57px) 57px);
+    transition: clip-path .6s cubic-bezier(.77, 0, .175, 1);
+    pointer-events: none;
+    z-index: 1500;
+}
+
+.hamburger-wrapper.open {
+    clip-path: circle(150% at calc(100% - 57px) 57px);
+    pointer-events: auto;
+}
+
+.menu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+
+.menu li {
+    margin: 20px 0;
+
+    opacity: 0;
+    transform: translateY(15px);
+    transition: .3s ease;
+}
+
+.menu a {
+    position: relative;
+    color: black;
+    font-size: 2.2rem;
+    font-weight: 300;
+    text-decoration: none;
+}
+
+.hamburger-wrapper.open li {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hamburger-wrapper.open li:nth-child(1) { transition-delay: .25s; }
+.hamburger-wrapper.open li:nth-child(2) { transition-delay: .32s; }
+.hamburger-wrapper.open li:nth-child(3) { transition-delay: .39s; }
+.hamburger-wrapper.open li:nth-child(4) { transition-delay: .46s; }
+.hamburger-wrapper.open li:nth-child(5) { transition-delay: .53s; }
+
 
 /* Experience Section */
 

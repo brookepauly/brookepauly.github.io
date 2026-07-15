@@ -61,3 +61,31 @@ window.addEventListener("scroll", () => {
     }
 
 });
+
+// Hamburger Toggle 
+
+const hamburger = document.getElementById("hamburger");
+const overlay = document.querySelector(".hamburger-wrapper");
+const menuLinks = document.querySelectorAll(".menu a");
+
+hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("open");
+    overlay.classList.toggle("open");
+});
+
+menuLinks.forEach(link => {
+    link.addEventListener("click", e => {
+        e.preventDefault();
+
+        const target = document.querySelector(link.getAttribute("href"));
+
+        hamburger.classList.remove("open");
+        overlay.classList.remove("open");
+
+        setTimeout(() => {
+            target?.scrollIntoView({
+                behavior: "smooth"
+            });
+        }, 500);
+    });
+});
