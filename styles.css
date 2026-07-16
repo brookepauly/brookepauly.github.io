@@ -741,7 +741,7 @@ main#carousel::after {
 /* Github Repo Section */
 
 #skills {
-  margin-top: -16rem;
+  margin-top: calc(1rem - var(--section-gap));
 }
 
 .proficiencies_header {
@@ -819,20 +819,23 @@ main#carousel::after {
 }
 
 #commit_count {
-  text-align: center;
+  width: 80%;
+  margin: 0 auto 1rem;
+  padding-left: calc(1rem); 
   opacity: 0;
-  margin-left: 7rem;
+  box-sizing: border-box;
+}
+
+#commit_count p {
+  font-size: clamp(0.5rem, 1vw, 0.8rem);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
+  margin: 0;
 }
 
 #commit_count.in-view {
   animation: slideUp 2s ease forwards;
-}
-
-#commit_count p {
-  font-size: clamp(1rem, 1vw, 0.8rem);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  text-align: left;
 }
 
 .github_block {
