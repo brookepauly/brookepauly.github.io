@@ -626,6 +626,30 @@ main#carousel::after {
   object-fit: cover;
 }
 
+/* Project Five */
+
+.project-five-visuals {
+  display: flex;
+  margin-top: -20px;
+  align-items: center;
+  justify-content: center;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.project-five-visuals img {
+  flex: 1;
+  background: rgba(255, 255, 255, .06);
+  border-radius: 8px;
+  color: #888;
+  font-size: .85rem;
+  max-width: 95%;
+  height: 80%;
+  border: none;
+  border-radius: 8px;
+}
+
 /* Project One */
 
 .project-four-visuals {
