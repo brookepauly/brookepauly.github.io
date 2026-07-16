@@ -135,9 +135,17 @@ h1 {
 
 .about_me {
   display: flex;
-  width: 500px;
-  margin: 0 auto;
   text-align: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.about_me {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .pfp img {
@@ -146,6 +154,15 @@ h1 {
   object-fit: cover;
   border-radius: 50%;
   transition: .2s;
+}
+
+.pfp {
+  width: clamp(180px, 80vw, 2500px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  position: relative;
+  z-index: 1;
+  margin-left: 4rem;
 }
 
 .circle:hover::before,
@@ -159,52 +176,6 @@ h1 {
   }
 }
 
-.project:hover {
-  transform: scale(1.05);
-  background: #1b1b1b;
-}
-
-.close_button {
-  position: absolute;
-  top: 0;
-  right: 0;
-  font-size: 30px;
-  background: none;
-  border: none;
-  z-index: 2000;
-}
-
-.project {
-  display: border;
-  width: 450px;
-  padding: 10px;
-  min-height: 75px;
-  text-align: center;
-  margin-right: 5px;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-  margin-top: 25px;
-  background-color: black;
-  border-radius: 12px;
-  color: white;
-  padding-top: 1px;
-  font-size: small;
-}
-
-.project h1 {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-  justify-content: left-align;
-}
-
-.project img {
-  float: left;
-  margin-top: 17px;
-  width: 55px;
-  height: auto;
-}
-
 /* header */
 
 header {
@@ -214,6 +185,7 @@ header {
   padding: 2px 5%;
   background: #000;
   margin-bottom: 0;
+  width: 100%;
 }
 
 header a,
@@ -264,31 +236,21 @@ header button:hover {
 }
 
 .header_container {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: black;
-  margin-bottom: 0;
-  width: auto;
+  gap: 50px;
+  width: 100%;
 }
 
-.pfp {
-  width: 450px;
-  height: 450px;
-  margin-right: 50px;
-  border-radius: 50%;
-  object-fit: cover;
-  position: relative;
-  z-index: 1;
-}
-
-.pfp::before, .pfp::after {
+.pfp::before,
+.pfp::after {
   content: '';
   position: absolute;
-  width: 455px;
-  height: 455px;
+  width: calc(100% + 5px);
+  height: calc(100% + 5px);
   top: 50%;
   left: 50%;
   border-radius: 50%;
@@ -300,9 +262,7 @@ header button:hover {
 
 .intro_wrapping {
   display: flex;
-  margin-left: 100px;
   flex-direction: column;
-  align-items: left;
   color: white;
   gap: 10px;
   animation: slide-up 1.7s;
@@ -320,8 +280,7 @@ header button:hover {
 }
 
 .intro_wrapping h1 {
-  font-size: 4rem;
-  text-align: left;
+  font-size: clamp(2rem, 5vw, 4rem);
   color: white;
   margin-bottom: 10px;
 }
@@ -330,10 +289,8 @@ header button:hover {
   margin-top: 0px;
   text-align: left;
   font-size: 1rem;
-}
-
-.resume_button_container {
-  margin-top: 50px;
+  text-wrap: balance;
+  width: 100%;
 }
 
 .desktop_buttons {
@@ -790,7 +747,7 @@ main#carousel::after {
   opacity: 0;
   border-collapse: separate;
   border-spacing: clamp(1px, 0.3vw, 3px);
-  margin: 0 auto;
+  margin: 0;
 }
 
 #contribution-table.in-view {
@@ -822,7 +779,7 @@ main#carousel::after {
 #commit_count {
   text-align: center;
   opacity: 0;
-  margin-left: 5rem;
+  margin-left: 7rem;
 }
 
 #commit_count.in-view {
@@ -830,7 +787,7 @@ main#carousel::after {
 }
 
 #commit_count p {
-  font-size: clamp(0.5rem, 1vw, 0.8rem);
+  font-size: clamp(1rem, 1vw, 0.8rem);
   overflow: hidden;
   text-overflow: ellipsis;
   text-align: left;
@@ -1251,9 +1208,7 @@ main#carousel::after {
   max-height: calc(100% - 160px);
 }
 
-
 .experience h1 {
   color: white;
   padding-bottom: 3rem;
 }
-
