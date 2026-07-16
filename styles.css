@@ -758,7 +758,6 @@ main#carousel::after {
 }
 
 .contribution-scroll {
-  width: 80%;
   margin: 0 auto;
   overflow-x: auto;
   border: 1px solid #92e0f8;
@@ -768,11 +767,15 @@ main#carousel::after {
 }
 
 #month-labels {
-    display: grid;
-    grid-template-columns: repeat(53, clamp(6px, 1vw, 20px));
-    gap: clamp(1px, 0.3vw, 3px);
-    margin-left: 35px;
-    height: 20px;
+    display: flex;
+    margin-left: 30px;
+}
+
+.month {
+    width: calc(
+        4 * clamp(6px, 1vw, 20px) +
+        3 * clamp(1px, 0.3vw, 3px)
+    );
 }
 
 #day-labels {
@@ -789,22 +792,18 @@ main#carousel::after {
   opacity: 0;
   border-collapse: separate;
   border-spacing: clamp(1px, 0.3vw, 3px);
-  margin: 0;
+  display: table;  
 }
 
 #contribution-table.in-view {
   animation: slideUp 2s ease forwards;
 }
 
-.calendar-body {
-    display: flex;
-    align-items: flex-start;
-}
-
 .month {
     font-size: 12px;
     color: white;
     white-space: nowrap;
+    margin-left: 0;
 }
 
 #contribution-table td {
@@ -818,20 +817,45 @@ main#carousel::after {
   transition: filter 0.2s ease;
 }
 
+.contribution-scroll{
+    text-align:center;
+}
+
+.calendar-body{
+    display:flex;
+}
+
+.calendar-wrapper {
+  width: max-content;
+  margin: 0;
+}
+
+.calendar-body {
+  display: flex;
+  align-items: flex-start;
+}
+
+#contribution-table {
+  margin: 0;            
+}
+
 #commit_count {
   width: 80%;
-  margin: 0 auto 1rem;
-  padding-left: calc(1rem); 
   opacity: 0;
   box-sizing: border-box;
 }
 
+#commit_count {
+  margin-bottom: 1rem;
+}
+
 #commit_count p {
-  font-size: clamp(0.5rem, 1vw, 0.8rem);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  text-align: left;
   margin: 0;
+  text-align: left;
+}
+
+.github_block {
+  width: 100%;
 }
 
 #commit_count.in-view {
@@ -839,7 +863,43 @@ main#carousel::after {
 }
 
 .github_block {
-  width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#commit_count,
+.calendar-wrapper {
+    width: max-content;
+}
+
+#commit_count p {
+    text-align: left;
+}
+
+:root {
+  --cell-size: clamp(6px, 1vw, 20px);
+  --cell-gap: clamp(1px, 0.3vw, 3px);
+}
+
+#month-labels {
+  display: grid;
+  grid-template-columns: repeat(53, var(--cell-size));
+  gap: var(--cell-gap);
+  margin-left: 2px;
+}
+
+#contribution-table {
+  border-spacing: var(--cell-gap);
+}
+
+#contribution-table td {
+  width: var(--cell-size);
+  height: var(--cell-size);
+}
+
+#day-labels {
+  height: calc(7 * var(--cell-size) + 6 * var(--cell-gap));
 }
 
 @keyframes slideUp {
@@ -979,6 +1039,7 @@ main#carousel::after {
   text-align: center;
   gap: 1.5rem;
   opacity: 0;
+  margin-top: calc(var(--section-gap) * .75);
 }
 
 #contact.in-view {
@@ -1185,6 +1246,7 @@ main#carousel::after {
 .experience {
     width: min(1100px, 90%);
     margin: 0 auto;
+    margin-top: calc(1rem - (var(--section-gap) * .5))
 }
 
 .timeline {
