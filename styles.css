@@ -792,7 +792,6 @@ main#carousel::after {
 
 #month-labels {
     display: flex;
-    margin-left: 30px;
 }
 
 .month {
@@ -1071,7 +1070,7 @@ main#carousel::after {
 }
 
 #contact h1 {
-  font-size: 2.5rem;
+  font-size: 4rem;
   margin-bottom: 1rem;
   color: white;
 }
@@ -1354,4 +1353,18 @@ main#carousel::after {
 
 .experience p {
   color: white;
+}
+
+h1 {
+  font-family: "Boldonse", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.experience h1 {
+  font-size: 4rem;
+}
+
+.projects_heading {
+  font-size: 4rem;
 }

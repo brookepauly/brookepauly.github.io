@@ -12,6 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Boldonse&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class = "header" id = "header">
@@ -19,7 +20,6 @@
         <nav>
             <ul class = "nav_links">
                 <li> <a href = "#projects"> Projects </a> </li>
-                <li> <a href = "#prof_skills"> Skills </a> </li>
                 <li> <a href = "#experience" > Experience </a> </li>
                 <li> <a href = "https://drive.google.com/file/d/15yLa9zOJjDJ7TS9q4iY6GbH2DEjjP1Ko/view?usp=sharing"> View Resume </a> </li>
             </ul>
@@ -88,11 +88,11 @@
         <!-- Experience Section -->
         <section id = "experience" class = "experience scroll-animate">
             <h1>Experience</h1>
-            <div class="timeline">
+            <div class="timeline scroll-animate">
                 <div class="timeline-progress"></div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
+                <div class="timeline-item scroll-animate">
+                    <div class="timeline-dot scroll-animate"></div>
+                    <div class="timeline-content scroll-animate">
                         <h3> Data Analyst Intern </h3>
                         <h4> Red Ventures</h4>
                         <p> Supported data analysis initiatives by cleaning and analyzing datasets, 
@@ -257,9 +257,6 @@
         
         <!-- Skills Section -->
         <section id = "skills">
-           <h1 class="proficiencies_header scroll-animate" id="prof_skills">
-                Skills
-            </h1>
             <div class="proficiencies">
                 <div class="github_block scroll-animate">
                         <div class = "calendar-wrapper">
@@ -313,7 +310,7 @@
         <section class = "contact">
             <form action="https://api.web3forms.com/submit" method="POST" id = "contact" class = "scroll-animate">
                 <input type="hidden" name="access_key" value="f6dd6851-9214-419f-94ed-f923eb8e6ae9">
-                <h1> Contact Me </h1>
+                <div class = "contact-me scroll-animate"> <h1> Contact Me </h1> </div>
                 <input type = "text" id = "email" name = "email" placeholder = "Your Email">
                 <textarea id="message" name="message" placeholder="Your Message"></textarea>
                 <button type="submit">
