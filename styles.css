@@ -1368,3 +1368,25 @@ h1 {
 .projects_heading {
   font-size: 4rem;
 }
+
+.experience h1,
+.timeline-item {
+  opacity: 0;
+}
+
+.experience h1.in-view {
+  animation: headingEntrance .6s cubic-bezier(.22, .61, .36, 1) both;
+}
+
+@keyframes timelineItemEntrance {
+  from { opacity: 0; translate: 0 30px; }
+  to   { opacity: 1; translate: 0 0; }
+}
+
+.timeline-item.in-view {
+  animation: timelineItemEntrance .6s cubic-bezier(.22, .61, .36, 1) both;
+}
+
+.timeline-item:nth-of-type(1) { animation-delay: 0s;  }
+.timeline-item:nth-of-type(2) { animation-delay: .2s; }
+.timeline-item:nth-of-type(3) { animation-delay: .4s; }
