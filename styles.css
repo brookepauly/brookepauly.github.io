@@ -1416,3 +1416,35 @@ h1 {
 #code-link:hover img {
   opacity: .8;
 }
+
+/* Mobile Section */
+
+@media (max-width: 768px) {
+  .carousel {
+    flex-direction: column;
+  }
+  nav {
+    display: none;
+  }
+
+  .hamburger {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    top: 20px;
+    right: 20px;
+    width: 48px;
+    height: 48px;
+  }
+
+  .cta {
+    display: none;
+  }
+
+  .hamburger-wrapper {
+    clip-path: circle(0% at calc(100% - 44px) 44px);
+  }
+
+  .hamburger-wrapper.open {
+    clip-path: circle(150% at calc(100% - 44px) 44px);
+  }
+}
