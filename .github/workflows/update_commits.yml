@@ -13,7 +13,7 @@ jobs:
 
       - name: Fetch commits
         run: |
-          FROM_DATE=$(date -u -d "1 year ago last sunday" +"%Y-%m-%dT00:00:00Z")
+          FROM_DATE=$(date -u -d "1 year ago" +"%Y-%m-%dT00:00:00Z")
           TO_DATE=$(date -u +"%Y-%m-%dT23:59:59Z")
 
           curl -X POST \
