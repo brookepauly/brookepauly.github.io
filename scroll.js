@@ -1,23 +1,3 @@
-// Scroll Animation 
-const scrollObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('in-view');
-    } else {
-      entry.target.classList.remove('in-view');
-    }
-  });
-}, { threshold: 0.2 });
-
-document.querySelectorAll('.scroll-animate').forEach(el => scrollObserver.observe(el));
-
-function revealSocialLinks() {
-  document.querySelector('.social-links').classList.add('in-view');
-  window.removeEventListener('scroll', revealSocialLinks);
-}
-
-window.addEventListener('scroll', revealSocialLinks);
-
 // Rendering Commits from GitHub API 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -35,20 +15,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const monthLabels = document.getElementById("month-labels");
       let lastMonth = "";
+      let lastLabelCol = -10;
 
       weeks.forEach((week, weekIndex) => {
 
         // Create month labels
-        const date = new Date(week.contributionDays[0].date);
+        const date = new Date(week.contributionDays[0].date + "T12:00:00");
         const month = date.toLocaleString("default", { month: "short" });
 
         if (month !== lastMonth) {
-          const span = document.createElement("span");
-          span.className = "month";
-          span.textContent = month;
-          span.style.gridColumn = weekIndex + 1;
+          if (weekIndex - lastLabelCol >= 3) {
+            const span = document.createElement("span");
+            span.className = "month";
+            span.textContent = month;
+            span.style.gridColumn = weekIndex + 1;
 
-          monthLabels.appendChild(span);
+            monthLabels.appendChild(span);
+            lastLabelCol = weekIndex;
+          }
 
           lastMonth = month;
         }
@@ -59,81 +43,3 @@ document.addEventListener('DOMContentLoaded', () => {
           const count = day.contributionCount;
 
           td.className =
-            `color-${count === 0 ? 0 :
-              count < 5 ? 1 :
-              count < 10 ? 2 :
-              count < 15 ? 3 : 4}`;
-
-          rows[dayIndex].appendChild(td);
-        });
-
-      });
-
-      rows.forEach(row => contributionTable.appendChild(row));
-    })
-    .catch(err => console.error('Error:', err));
-});
-
-// Header Animation 
-
-const header = document.getElementById("header");
-
-window.addEventListener("scroll", () => {
-
-    if(window.scrollY > 100){
-        header.classList.add("scrolled");
-    } 
-    else {
-        header.classList.remove("scrolled");
-    }
-
-});
-
-// Hamburger Toggle 
-
-const hamburger = document.getElementById("hamburger");
-const overlay = document.querySelector(".hamburger-wrapper");
-const menuLinks = document.querySelectorAll(".menu a");
-
-hamburger.addEventListener("click", () => {
-    hamburger.classList.toggle("open");
-    overlay.classList.toggle("open");
-});
-
-menuLinks.forEach(link => {
-    link.addEventListener("click", e => {
-        e.preventDefault();
-
-        const target = document.querySelector(link.getAttribute("href"));
-
-        hamburger.classList.remove("open");
-        overlay.classList.remove("open");
-
-        setTimeout(() => {
-            target?.scrollIntoView({
-                behavior: "smooth"
-            });
-        }, 500);
-    });
-});
-
-// Experience Animation
-
-const timeline = document.querySelector(".timeline");
-const progress = document.querySelector(".timeline-progress");
-
-window.addEventListener("scroll", () => {
-
-    const rect = timeline.getBoundingClientRect();
-
-    const start = window.innerHeight * 0.2;
-    const end = rect.height;
-
-    let progressHeight = start - rect.top;
-
-    progressHeight = Math.max(0, progressHeight);
-    progressHeight = Math.min(progressHeight, end);
-
-    progress.style.height = `${progressHeight}px`;
-
-});
